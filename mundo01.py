@@ -146,16 +146,31 @@ print(emoji.emojize('Python is fun :thumbsup:', language='alias'))'''
 n = float(input('Insira um numero: '))
 print(floor(n))'''
 
+#Outro jeito que seria o do vídeo
+'''from math import trunc
+n = float(input('Insira um numero: '))
+print(trunc(n))'''
+
+#Mais um jeito
+'''n = float(input('Insira um numero: '))
+print(type(n))
+print('{} valor inteiro é : {}'.format(n, int(n))) #Mostra o valor inteiro, para a variavel n ter o valor inteiro em si, teria que haver uma atribuicao, por isso ela continua com o tipo float apos esse código'''
+
 #17° desafio (Ler cateto oposto e adjacente, devolver a hipotenusa)
 '''from math import hypot
 oposto = float(input('Insira o cateto oposto: '))
 adjacente = float(input('Insira o cateto adjacente: '))
-print(hypot(oposto, adjacente))'''
+hip = hypot(oposto, adjacente) #Estou começando a usar variaveis auxiliares pq depois vou precisar usar variaveis auxiliares em programas mais complexos, entao na pratica ao inves de fazer direto os resultados vou armazenando em variaveis aux, por mais que utilize mais memoria
+print('Hipotenusa: {:.2f}'.format(hip))'''
 
 #18° desafio (Seno, cosseno e tangente de um numero)
-'''from math import sin, cos, tan
+#Esse exerciico eu tinha feito errado, precisava converter o angulo para radiano, meu programa nao fazia entao o resultado estava errado, adicionando a conversao por meio do radians consegui chegar no resultado correto
+'''from math import sin, cos, tan, radians
 n = float(input('Insira um numero: '))
-print('O seno do numero {} é {:.2f}, cosseno é {:.2f} e tangente é {:.2f}'.format(n, sin(n), cos(n), tan(n)))'''
+sen = sin(radians(n))
+coss = cos(radians(n))
+tang = tan(radians(n))
+print('O seno do numero {} é {:.2f}, cosseno é {:.2f} e tangente é {:.2f}'.format(n, sen, coss, tang))'''
 
 #19° desafio (Sorteio de 4 alunos, escreva o nome do escolhido sorteando-o)
 '''from random import choice #esse módulo ele escolhe aleatoriamente algo dentro de uma lista
@@ -168,20 +183,31 @@ for i in range(1, 6, 1): #Aqui coloco o parametro de inicio e parada
     nomes.append(str(input('Insira o nome: '))) #Aqui a função append vai colocar no final da lista o que o usuário digitar
 print('O nome escolhido foi {}'.format(choice(nomes))) #Aqui eu faço o sorteio ja com a lista cheia'''
 
-#20° desafio (Escolha aleatoriamente alunos e sua ordem de apresentação de cada um) ############    NÃO CONSEGUI FAZER
-'''import random
+#20° desafio (Escolha aleatoriamente alunos e sua ordem de apresentação de cada um)
+'''from random import shuffle
+n1 = str(input('Insira um nome : '))
+n2 = str(input('Insira um nome : '))
+n3 = str(input('Insira um nome : '))
+lista = [n1, n2, n3]
+shuffle(lista)
+print('A ordem de apresentação sera ')
+print(lista)'''
+
+#Outro jeito de fazer com estrutura de repeticao
+'''from random import shuffle
 nomes = []
 for i in range(1, 4, 1):
-    nome = input('Insira um nome: ')
-    nomes.append(nome)
-
-for j in range(1, 4, 1):
-    print('{} apresentara de {}'.format(random.sample(), j))'''
+    nome = str(input('Insira um nome: '))
+    nomes.append(nome) #Aqui ele já faz uma atribuicao a lista nome, apos essa linha nomes contem todos os nomes que foram dados de stdin
+shuffle(nomes) #Embaralha a lista
+print('A apresentação sera nesta ordem : {}'.format(nomes)) #Imprime a lista completa, pois já foi embaralhada'''
 
 #21° desafio (Tocar uma música)
-from pygame import mixer 
-mixer.init() #Pelo que entendi e deduzi inicializa o mixer, como se abrisse ele
+'''from pygame import mixer
+mixer.init() #Inicia a biblioteca do pygame
 mixer.music.load("D:\HUGO\musica.mp3") #Carrega a musica no diretorio de origem dela
 mixer.music.set_volume(0.7) #Aqui regula o volume
 mixer.music.play() #Coloca na lista de espera de um certo modo de dizer, ja que o comando abaixo em si toca a musica
-input("  ")  #Por algum motivo o input seria um tipo de play pra musica comecar a tocar, tipo um pressionamento
+input("  ")  #Por algum motivo o input seria um tipo de play na musica pra comecar a tocar, tipo um pressionamento'''
+
+#Abaixo é referente a aula 9
