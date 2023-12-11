@@ -128,3 +128,60 @@ custo = (dias * 60) + (km * 0.15)
 print('O custo total foi de R${}!'.format(custo)) '''
 
 #Abaixo é referente a aula 08
+'''import math
+n = float(input('Insira um numero: '))
+print('{}'.format(math.sqrt(n)))'''
+
+'''import random
+n = random.random() #O random gera um numero de 0 ate 1
+m = random.randint(1, 10) #Randomiza um numero inteiro, colocando o intervalo dentro dele
+print(m) #recebe o intervalo de 1 ate 10
+print(n) #n recebendo numero aleatório, abaixo chamando a função diretamente
+print('numero aleatorio {}'.format(random.random())) #Lembrando que o random devolve um valor aleatorio para uma variavel ou simplesmente escrevendo na tela'''
+'''import emoji #Lembrando que o pip foi instalado no diretorio 'Scripts', nao no PATH, teria que instalar ele, nao sei que problema isso vai gerar mas ate agora ta de boa
+print(emoji.emojize('Python is fun :thumbsup:', language='alias'))'''
+
+#16° desafio (Mostrar a porção inteira de um valor real)
+'''from math import floor
+n = float(input('Insira um numero: '))
+print(floor(n))'''
+
+#17° desafio (Ler cateto oposto e adjacente, devolver a hipotenusa)
+'''from math import hypot
+oposto = float(input('Insira o cateto oposto: '))
+adjacente = float(input('Insira o cateto adjacente: '))
+print(hypot(oposto, adjacente))'''
+
+#18° desafio (Seno, cosseno e tangente de um numero)
+'''from math import sin, cos, tan
+n = float(input('Insira um numero: '))
+print('O seno do numero {} é {:.2f}, cosseno é {:.2f} e tangente é {:.2f}'.format(n, sin(n), cos(n), tan(n)))'''
+
+#19° desafio (Sorteio de 4 alunos, escreva o nome do escolhido sorteando-o)
+'''from random import choice #esse módulo ele escolhe aleatoriamente algo dentro de uma lista
+nomes = ['Hugo', 'João', 'Maria', 'Lucas'] #Aqui supus que era desse jeito e deu certo
+print('O nome do escolhido é : {}!'.format(choice(nomes))) '''
+
+#Mesmo exercicio melhorado, utilizando estrutura de repetição (O usuario pode colocar os nomes, eles nao vem pre-definidos como o código anterior)
+'''nomes = [] #Inicializa uma variavel como lista vazia
+for i in range(1, 6, 1): #Aqui coloco o parametro de inicio e parada
+    nomes.append(str(input('Insira o nome: '))) #Aqui a função append vai colocar no final da lista o que o usuário digitar
+print('O nome escolhido foi {}'.format(choice(nomes))) #Aqui eu faço o sorteio ja com a lista cheia'''
+
+#20° desafio (Escolha aleatoriamente alunos e sua ordem de apresentação de cada um) ############    NÃO CONSEGUI FAZER
+'''import random
+nomes = []
+for i in range(1, 4, 1):
+    nome = input('Insira um nome: ')
+    nomes.append(nome)
+
+for j in range(1, 4, 1):
+    print('{} apresentara de {}'.format(random.sample(), j))'''
+
+#21° desafio (Tocar uma música)
+from pygame import mixer 
+mixer.init() #Pelo que entendi e deduzi inicializa o mixer, como se abrisse ele
+mixer.music.load("D:\HUGO\musica.mp3") #Carrega a musica no diretorio de origem dela
+mixer.music.set_volume(0.7) #Aqui regula o volume
+mixer.music.play() #Coloca na lista de espera de um certo modo de dizer, ja que o comando abaixo em si toca a musica
+input("  ")  #Por algum motivo o input seria um tipo de play pra musica comecar a tocar, tipo um pressionamento
