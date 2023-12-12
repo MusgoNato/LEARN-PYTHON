@@ -211,3 +211,102 @@ mixer.music.play() #Coloca na lista de espera de um certo modo de dizer, ja que 
 input("  ")  #Por algum motivo o input seria um tipo de play na musica pra comecar a tocar, tipo um pressionamento'''
 
 #Abaixo é referente a aula 9
+#Fatiamento de strings -> frase[9:13] -> Caso eu mande imprimir na tela, ele vai pegar a posicao 9 da string e vai ate a posicao 13-1, pois a ultima posição ele nunca pega, é sempre uma antes
+#frase[9:21:2] -> Os dois primieiros parametros fazem o mesmo que o exemplo anterior, o '2' vai pular duas casas e ai mostrar na tela
+#frase[:5] -> Mesma coisa que frase[0:5]
+#frase[15:] -> Comeca no caractere 15, nao sabendo o final ele vai ate o fim da string
+#frase[9::3] -> Comeca no 9 e vai ate o final da string pulando de 3 em 3 caracteres
+#len(frase) -> Me mostra o comprimento da frase
+#frase.count('o') ->O count ele conta quantas vezes a letra 'o' minuscula
+#frase.count('o', 0, 13) ->Vai do 0 ate o 12, ja conta sendo fatiada a string
+#frase.find('deo') -> Ele mostra em que momento começou essa frase, mostra a posição (caso o valor retornado seja -1, significa que a sstring passada nao foi encontrada)
+#Operador 'in' -> 'Curso' in frase -> O operador in retorna True se existe dentro da string a palavra Curso, caso nao esteja é False
+#frase.replace('Python, 'Android') -> Substitui o primeiro parametro pelo segundo
+#frase.upper() -> Vai colocar a string toda em maiusculo, se ja estiver ele deixa
+#frase.lower() -> Contrario do upper
+#frase.capitalize() -> O capitalize trasforma todos os caracteres em minusculo, só a primeira letra ele coloca em maisuculo
+#frase.title() -> Ele analisa toda a string, onde tem espaço ele quebra e coloca em cada palavra quebrada, a primeira letra ele coloca em maisucula
+#frase.strip() -> remove todos os espaços inuteis no inicio e no fim da string
+#frase.rstrip() -> Remove somente os ultimos espaços direita
+#frase.lstrip() -> Remove somente os primeiros espaços da esquerda
+#frase.split() -> ocorre uma divisao dentro da string considerando os espaços, ele divide a string inteira em outras strings, a partir dos espaços
+#'-'.join(frase) -> Junção de strings usando um separador '-'
+
+'''frase = 'hugo josué'
+print(frase[0]) 
+print(frase[14:2])
+print('hugo' in frase)
+print(frase.upper().find('HUGO')) #Aqui ele joga todas as letras em maisuculo primeiro e depois faz a  busca na string ja modificada, por isso o valor retornado vai ser verdade, pois encontrou
+print(frase.count('o'))
+print(frase.replace('Hugo', 'Joãozinho'))
+print(frase.capitalize())
+print(len(frase))
+print("""AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+      AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+      AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA ZE DA MANGA!!!!!""")
+print(frase.split())
+frase = frase.split() 
+print(' '.join(frase)) #Aqui ele junta a lista contendo varias strings que foram dividias pelo split anteriormente, mas só mostrara na tela, apos esse trecho o que esta na string continua sendo o mesmo de antes ou seja, é uma lista de strings'''
+
+#22° desafio (Ler uma string e mostrar ela toda maiuscula, minuscula, quantas letras sem considerar espaços e quantas letras tem o primeiro nome)
+'''nome = str(input('Insira seu nome : '))
+print(nome.upper()) #Transforma a string em maisucula
+print(nome.lower()) #Transforma a string em minuscula
+nome = nome.split() #Separa a string em substring onde houver espaços
+print(len(nome[0])) #Da o tamanho da primeira substring
+nome = ' '.join(nome) #Junta tudo de novo colocando espaço, assim como a string original
+nome = nome.replace(' ', '') #troca os espaços por espaço vazio
+print(len(nome)) #Tudo junto me retorna o tamanho da string'''
+
+#23° desafio (Ler uma string como numero e separar a unidade, dezena, centena e milhar)
+'''num = str(input('Insira um numero : '))
+print('Unidade : {}'.format(len(num))) #As unidades seria o tamanho da string
+print('Dezena : {}\nCentena: {}\nMilhar: {}'.format(num[2], num[1], num[0]))'''
+
+#Outro jeito de fazer tratando a string como um numero
+'''from math import trunc
+num = int(input('Insira um numero: '))
+if num >= 0 and num <= 9999: #Coloquei uma condição pra saber o intervalo do numero, se o usuario digitou errado ou não
+
+    unidade = num % 10 #Calculo para saber a unidade
+    print('Unidade : {}'.format(unidade))
+    dezena = ((num - unidade) / 10) % 10 #calculo para saber a dezena
+    print('Dezena : {}'.format(trunc(dezena)))
+    centena = ((num - dezena) / 100) % 10 #Calculo para saber a centena
+    print('Centena : {}'.format(trunc(centena)))
+    milhar = ((num - centena) / 1000) % 10 #Calculo para milhar
+    print('Milhar : {}'.format(trunc(milhar)))
+else:
+    print('Numero fora do intervalo!')'''
+
+#24° desafio (Ler uma cidade e saber se ela começa com 'Santo' ou nao)
+'''city = str(input('Insira o nome da cidade : '))
+city = city.split()
+if city[0] == 'Santo':
+    print('A cidade começa com o nome Santo!')
+else:
+    print('A cidade não começa com o nome Santo!')'''  
+
+#25° desafio (Le um nome e ver se ele tem 'Silva' no nome)
+'''nome = str(input('Insira seu nome: '))
+encontrou = nome.find('Silva') #Aqui criei uma variavel booleana pra saber se falhou ou nao a procura, caso falhe entao nao tem silva o nome, caso de certo o nome Silva foi encontrado
+if encontrou == -1:
+    print('Não há o nome Silva no nome!')
+else:
+    print('Há o nome Silva no nome!')'''
+
+#Outro jeito de fazer o mesmo desafio
+'''nome = str(input('Insira seu nome: '))
+print('Silva' in nome)'''
+
+#25 desafio (Quantas vezes aparece a letra 'A', em que posição ela aparece a primeira vez, em que posição ela aparece a ultima vez)
+'''string = str(input('Insira uma palavra : '))
+print('Aparece {} vezes!'.format(string.count('A')))
+print('Primeira {} que aparece!'.format(string.find('A')))
+print('Ultima {} que aparece'.format(string.rfind('A')))'''
+
+#26 desafio (Ler nome completo de uma pessoa, mostrar o primeiro e ultimo nome separadamente)
+'''nome = str(input('Insira seu nome: '))
+nome = nome.split()
+print(nome[0]) #aqui o primeiro elemento e a posicao 0 mesmo
+print(nome[-1]) #A string pode ser acessada de tras pra frente, por isso o -1'''
