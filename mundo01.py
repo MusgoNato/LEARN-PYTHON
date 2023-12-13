@@ -308,3 +308,64 @@ nome = nome.split()
 print('Primeiro nome : {}'.format(nome[0])) #aqui o primeiro elemento e a posicao 0 mesmo
 print('Último nome : {}'.format(nome[-1])) #A string pode ser acessada de tras pra frente, por isso o -1
 #print('Último nome : {}'.format(nome[len(nome) - 1])) #Outro jeito de pegar o ultimo nome'''
+
+#Referente a aula 10
+#Para situações mais simplificadas pode-se usar: print('Carro Novo' if tempo <= 3 else 'Carro Velho')
+'''nome = str(input('Insira seu nome: ')).strip()
+if nome == 'Hugo':
+    print('Ahhhh ze da manga!!')
+else:
+    print('Manoel gomes galera uuuu!!!')'''
+
+#Desafio atras melhorado com uso de condição composta
+'''nota1 = float(input('Insira a nota 1: '))
+nota2 = float(input('Insira a nota 2: '))
+media = (nota1 + nota2) / 2
+#print('Sua média é {}, Tu passou meu patrão'.format(media) if media >= 6 else 'Sua média é {}, se ferrou aaaa!!!!'.format(media)) #Jeito simplificado de fazer o mesmo if abaixo
+if media >= 6:
+    print('Sua média é {}, Tu passou meu patrão!'.format(media))
+else:
+    print('Sua média é {}, se ferrou aaaaa!!!!'.format(media))'''
+
+#28° desafio (Fazer o computador pensar em um numero de 0 a 5, mandar o usuario tentar acertar o numero)
+'''from random import randint
+num = randint(0, 5)
+user = int(input('Tente acertar o numero que o computador pensou: '))
+if user >= 0 and user <= 5:
+    if user == num:
+        print('Parabéns voce acertou!')
+    else:
+        print('Infelizmente voce errou!')
+else:
+    print('Numero passou do intervalo de adivinhação!')'''
+
+#29° desafio (Escreva na tela se um carro ultrapassar 80km/h, dizendo que ele foi multado sabendo que cada km equivale a 7)
+'''km = int(input('Insira a velocidade do carro: '))
+multa = (km - 80) * 7
+if km > 80:
+    print('Voce foi multado, valor da multa é igual a : {}'.format(multa))
+else:
+    print('Ta de boa pébo')'''
+
+#30° desafio (Mostrar se numero é par ou impar)
+'''num = int(input('Insira um numero: '))
+if num % 2 == 0:
+    print('Numero par!')
+else:
+    print('Numero ímpar!')'''
+
+#31° desafio (Pergunte a distancia  de uma viagem, calcule o preço da passagem, cobrando 0,50 por km em ate 200km/h, para viagens mais longas 0,45)
+'''distancia = int(input('Insira a distancia percorrida: '))
+if distancia <= 200:
+    preco = distancia * 0.50
+    print('Preço a pagar : {:.2f}'.format(float(preco)))
+else:
+    preco = distancia * 0.45
+    print('Preço a pagar : {:.2f}'.format(float(preco)))'''
+
+#32° desafio (Ano qualquer e mostrar se ele é bissexto)
+ano = int(input('Insira um ano : '))
+if ano % 4 == 0 or ano % 100 == 0 or ano % 400 == 0:
+    print('Ano bissexto')
+else:
+    print('Ano nao bissexto')
