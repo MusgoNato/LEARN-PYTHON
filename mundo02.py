@@ -150,3 +150,77 @@
 #     print('Voce perdeu, pc jogou tesoura!')
 # elif user == 'TESOURA' and pc == 'PEDRA':
 #     print('Voce perdeu, pc jogou pedra!')
+
+#Referente a aula 13
+# for c in range(0,6):
+#     print('Oi')
+# print('Fim')
+
+# for c in range(1, 7):#O ultimo ele sempre ignora
+#     print(c)
+# print('Fim')
+
+# for c in range(6, 0, -1): #Começa ao contrario
+#     print(c)
+# print('Fim')
+
+# for c in range(0, 7, 2): #Pula de dois em dois, de tras para frente
+#     print(c)
+# print('Fim')
+
+# n = int(input('Digite o Inicio: '))
+# f = int(input('Digite o Fim: '))
+# p = int(input('Digite o passo : '))
+# for c in range(n, f, p): #Posso usar variaveis para determinar o inicio e fim do dor, tambem para dizer em quantos passos quero
+#     print(c)
+# print('FIM')
+
+# s = 0
+# for c in range(0, 3):
+#     n = int(input('Insira um numero: '))
+#     s += n
+# print('Soma : {}'.format(s))
+
+#46º desafio (Contagem regressiva de 10 ate 0, pausando 1 segundo)
+# from time import sleep
+# import emoji
+# for i in range(10, 0 , -1):
+#     print('Contagem regressiva : {}'.format(i))
+#     sleep(1)
+# print(emoji.emojize('FOGOS ESTOURADOS :thumbsup:', language='alias'))
+
+#47º desafio (Criar um programa com todos os numeros pares, no intervalo de 1 ate 50)
+# for i in range(1, 50 + 1):
+#     if i % 2 == 0:
+#         print('Par : {}'.format(i))
+    #else:
+    #   print('Impar : {}'.format(i)) #Crie um else pra mostrar os impares, porem o desafio so pediu pares
+
+#48º desafio (Soma de impares multiplos de 3 no range 0 ate 50)
+# s = 0        
+# for i in range(1, 50 + 1):
+#     if i % 2 == 1 and i % 3 == 0:
+#         s += i
+#         print('{}'.format(i))
+# print(s)
+
+#49º desafio (Tabuada usando for)
+# n = int(input('Insira o numero da tabuada: '))
+# mult = 1
+# for i in range(1, 11):
+#     print('{} X {} = {}'.format(n, i, mult * i))
+
+#50º desafio (ler 6 numeros e se for par soma)
+# s = 0
+# for i in range(1, 7):
+#     if i % 2 == 0:
+#         s += i
+# print('Soma : {}'.format(s))
+
+#51º desafio (ler o primeiro termo e a razao de uma prorgressao artmetica)
+# p_termo = int(input('Insira o primeiro termo : '))
+# r = int(input('Insira a razao : '))
+# for i in range(p_termo, 20, r):
+#     print('{}'.format(i))
+
+#52º desafio (dizer se n é numero primo)
