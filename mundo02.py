@@ -224,3 +224,61 @@
 #     print('{}'.format(i))
 
 #52º desafio (dizer se n é numero primo)
+# n = int(input('Insira um numero : '))
+# resultado = 0
+# for i in range(1 , int(n/2)):
+#     if n % i != 0:
+#         resultado += 1
+#         break;
+
+# if resultado == 0:
+#     print('Primo: {}'.format(n))
+# else:
+#     print('Ñ primo : {}'.format(n))
+
+#53º desafio (Verificar se uma string é palidromo descosiderando espaços)
+# string = str(input('Digite a palavra: ')).split()
+# string  = ''.join(string).upper()
+# retorno = 0
+# tamanho = len(string)
+# for i in range(0, tamanho): #Vai de 0 ate tamanho - 1, lembrando que o ultimo valo nao pega
+#     if string[i] == string[tamanho - i - 1]: #Aqui ele começa com uma posicao a mais, por isso e necessario decremetar um de inicio na variavel tamanho
+#         retorno += 1
+#     else:
+#         retorno = 0 #Caso ele encontre uma letra que nao seja igual entao nao precisa verificar mais e sai do loop
+#         break;
+
+# if retorno != 0: #Faz uma verificação pra informar se a palavra é palindromo
+#     print('Palavra {} é palíndromo!'.format(string).lower())
+# else:
+#     print('Palavra não é palindromo!')
+
+#54º desafio (Ler ano de nascimento de 7 pessoas e dizer se é maior que 21 anos de idade)
+# import datetime
+# resultado = datetime.datetime.today().year
+# for i in range(0, 8):
+#     nome = str(input('Insira seu nome: ')).strip()
+#     ano = int(input('Qual seu ano de nascimento : '))
+#     maior = resultado - ano
+#     if maior >= 21:
+#         print('Voce é maior de idade {}'.format(nome))
+#     else:
+#         print('Voce é de menor {}, falta {} anos pra ser de maior!'.format(nome, 21 - maior))
+
+#55º desafio (Ler peso de 5 pessoas e determinar qual foi o maior e menor peso lido)
+peso = 0
+nome = []
+resultado = 0
+for i in range(0 , 6):
+    nome[i] = str(input('Insira seu nome: '))
+    peso[i] = float(input('Insira seu peso: '))
+    if peso[i] <= peso[i + 1]:
+        resultado += 1
+    else:
+        resultado -= 1
+
+
+
+
+
+
