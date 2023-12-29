@@ -193,16 +193,30 @@
 # for i in range(1, 50 + 1):
 #     if i % 2 == 0:
 #         print('Par : {}'.format(i))
-    #else:
-    #   print('Impar : {}'.format(i)) #Crie um else pra mostrar os impares, porem o desafio so pediu pares
+#     else:
+#       print('Impar : {}'.format(i)) #Crie um else pra mostrar os impares, porem o desafio so pediu pares
 
-#48º desafio (Soma de impares multiplos de 3 no range 0 ate 50)
+#Outro jeito de fazer sem fazer duas iterações
+# for i in range(1, 51, 2): #Aqui ele pula de dois em dois pois nao é necessario verificar os impares
+#    if i % 2 == 0:
+#       print('Par : {}'.format(i))
+
+#48º desafio (Soma de impares multiplos de 3 no range 0 ate 50) #Faltou acumulador
 # s = 0        
-# for i in range(1, 50 + 1):
+# cont = 0
+# for i in range(1, 501):
 #     if i % 2 == 1 and i % 3 == 0:
 #         s += i
+#         cont += 1
 #         print('{}'.format(i))
-# print(s)
+# print('A soma dos {} valores são {}'.format(cont, s))
+
+#Outro jeito de fazer
+# for i in range(1, 501, 2):
+#     if and i % 3 == 0:
+#         s += i
+#         print('{}'.format(i))
+# print('A soma dos {} valores são {}'.format(cont, s))
 
 #49º desafio (Tabuada usando for)
 # n = int(input('Insira o numero da tabuada: '))
@@ -210,34 +224,36 @@
 # for i in range(1, 11):
 #     print('{} X {} = {}'.format(n, i, mult * i))
 
-#50º desafio (ler 6 numeros e se for par soma)
+#50º desafio (ler 6 numeros e se for par soma) #Faltou ler o numero
 # s = 0
-# for i in range(1, 7):
-#     if i % 2 == 0:
-#         s += i
+# for i in range(1, 5, 1): #Pula de um em um
+#     valor = int(input('Insira o {} numero: ').format(i))
+#     if valor % 2 == 0:
+#         s += valor
 # print('Soma : {}'.format(s))
 
-#51º desafio (ler o primeiro termo e a razao de uma prorgressao artmetica)
+#51º desafio (ler o primeiro termo e a razao de uma prorgressao artmetica) #Essa eu consegui fazer porem com numero magico, a formula ajudou a calcular com qualquero numero inicial
 # p_termo = int(input('Insira o primeiro termo : '))
 # r = int(input('Insira a razao : '))
-# for i in range(p_termo, 20, r):
+# n_esimotermo = p_termo + (10 - 1) * r #Formula que calcula ate o decimo termo  
+# for i in range(p_termo, n_esimotermo + r, r):
 #     print('{}'.format(i))
 
 #52º desafio (dizer se n é numero primo)
 # n = int(input('Insira um numero : '))
 # resultado = 0
-# for i in range(1 , int(n/2)):
-#     if n % i != 0:
+# for i in range(1 , n + 1):
+#     if n % i == 0: #Aqui estava errado, eu negava ser igual a 0 para ele somar no resultado, eu quase consegui o mesmo resultado porem tava fazendo ao contrario
 #         resultado += 1
-#         break;
 
-# if resultado == 0:
+# #Como ele e divisivel por um e por ele msm, so e necessario saber quantas vezes foi divisivel o numero, acima de 2 nao e divisivel por causa da regra de um numero primo
+# if resultado <= 2:
 #     print('Primo: {}'.format(n))
 # else:
 #     print('Ñ primo : {}'.format(n))
 
 #53º desafio (Verificar se uma string é palidromo descosiderando espaços)
-# string = str(input('Digite a palavra: ')).split()
+# string = str(input('Digite a palavra: ')).strip().split()
 # string  = ''.join(string).upper()
 # retorno = 0
 # tamanho = len(string)
@@ -266,19 +282,45 @@
 #         print('Voce é de menor {}, falta {} anos pra ser de maior!'.format(nome, 21 - maior))
 
 #55º desafio (Ler peso de 5 pessoas e determinar qual foi o maior e menor peso lido)
-peso = 0
-nome = []
-resultado = 0
-for i in range(0 , 6):
-    nome[i] = str(input('Insira seu nome: '))
-    peso[i] = float(input('Insira seu peso: '))
-    if peso[i] <= peso[i + 1]:
-        resultado += 1
-    else:
-        resultado -= 1
+# nome = []
+# peso = []
+# cont = 0
+# for i in range(0, 3): #Dentro desse loop ocorre a adicao no final da lista criada para nome e peso, para isso e necessario criar uma variavel pegar os elementos lidos e depois juntalos utilizando append e de começo colocando o nome da lista
+#     pessoa = str(input('Insira seu nome : ')).strip()
+#     valor = float(input('Insira seu peso: '))
+#     nome.append(pessoa)
+#     peso.append(valor)
 
+# Aqui encontra o menor e maior valor da lista passada
+# maior = max(peso) 
+# menor = min(peso)
+# print(maior)
+# print(menor)
 
+#56 desafio (ler nome, sexo e idade de 4 pessoas e depois retornar a media de idade do grupo, o nome do homem mais velho e quantas mulheres tem menos de 20 anos)
+# nome = []
+# idade = []
+# sexo = []
+# homens_velhos = []
+# media = 0.0
+# cont = 0
+# maior = 0
+# for i in range(4):
+#     pessoa = str(input('Insira seu nome : ')).strip().upper()
+#     anos = int(input('Insira sua idade : '))
+#     genero = str(input('Insira seu sexo: ')).strip().upper()
+#     nome.append(pessoa)
+#     idade.append(anos)
+#     sexo.append(genero)
+#     if genero == 'F' or genero == 'FEMININO' and anos < 20: #Outro jeito é (if genero in 'Ff'), ele faz tipo um or dentro das aspas, se for um ou outro ele entra no if
+#         cont += 1 #Conta as mulheres
+#     if genero == 'M' or genero == 'MASCULINO':
+#         homens_velhos.append(anos) #Aqui adiciono a idade em homens mais velhos para saber qual é
+#         maior = max(homens_velhos) #Aqui guardo a idade mais alta conforme o loop vai rodando
+#         homem_maisvei = idade.index(max(homens_velhos)) #Aqui atribui uma variavel para guardar o indice do numero maior da lista de homenns_velhos
 
-
-
+# print('{} é o mais velho com {} anos!'.format(nome[homem_maisvei], maior)) #Aqui procuro na lista passando como indice a variavel homem_maisvei que criei dentro do loop e pega o indice do maior elemento dentro da lista
+# print('Existem {} mulheres menores que 20 anos!'.format(cont))
+# media = sum(idade)/len(idade) #O sum vai somar todos os elementos de uma lista e depois divido pela quantidade, onde o lem me retorna essa valor
+# print('Media da idade do grupo : {} anos!'.format(media))
 
