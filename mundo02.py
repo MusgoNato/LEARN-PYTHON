@@ -297,7 +297,7 @@
 # print(maior)
 # print(menor)
 
-#56 desafio (ler nome, sexo e idade de 4 pessoas e depois retornar a media de idade do grupo, o nome do homem mais velho e quantas mulheres tem menos de 20 anos)
+#56° desafio (ler nome, sexo e idade de 4 pessoas e depois retornar a media de idade do grupo, o nome do homem mais velho e quantas mulheres tem menos de 20 anos)
 # nome = []
 # idade = []
 # sexo = []
@@ -324,3 +324,90 @@
 # media = sum(idade)/len(idade) #O sum vai somar todos os elementos de uma lista e depois divido pela quantidade, onde o lem me retorna essa valor
 # print('Media da idade do grupo : {} anos!'.format(media))
 
+#Referente a aula 14
+#O for é mais certo usar quando eu sei o limite
+#Já o while e comum usar quando nao sei o limite
+
+# for c in range(1, 10):
+#     print(c)
+# print('Fim')
+
+#FLAG = ponto de parada
+# c = 1
+# while c <= 10:
+#     print(c)
+#     c += 1
+# print('Fim')
+
+#57° desafio (Fazer um programa que leia o sexo de uma pessoa, sendo m ou f, caso esteja errado pedir novamente ate ter o valor correto)
+# sexo = ''
+# while sexo != 'F' and sexo != 'M':
+#     sexo = str(input('Insira seu gênero: ')).strip().upper()
+#     if sexo == 'M':
+#         print('Você é menino!')
+#         break;
+#     elif sexo == 'F':
+#         print('Você é menina!')
+#         break;
+
+#58° desafio (adivinhar numero que o pc pensou de 0 a 10 e dizer quantos palpites foram necessarios)
+# from random import randint
+# pc = randint(0, 10)
+# palpites = 0
+# player = 0
+# while pc != player:
+#     player = int(input('Insira um numero: '))
+#     if pc == player:
+#         print('Parabens voce acertou o numero, foram necessarios {} palpites'.format(palpites))
+#         break;
+#     palpites += 1
+
+#59° desafio (Criar programa que le 2 valores e ter um menu pra realizar a operacao solicitada, somar, maior, multiplicar, novos numeros, ou sair)
+# import os
+# from time import sleep
+# op = 0
+# n1 = int(input('Insira o valor 1° : '))
+# n2 = int(input('Insira o valor 2° : '))
+# while op != 5:
+#     print('[1]SOMAR\n[2]MAIOR\n[3]MULTIPLICAR\n[4]NOVOS NUMEROS\n[5]SAIR\n')
+#     op = int(input('Insira a opção : '))
+#     os.system('cls')
+#     if op == 1:
+#         print('Soma : {}'.format(n1 + n2))
+#         sleep(2)
+#     elif op == 2:
+#         print('Maior : {}'.format(max(n1, n2)))
+#         sleep(2)
+#     elif op == 3:
+#         print('Multiplicação : {}'.format(n1 * n2))
+#         sleep(2)
+#     elif op == 4:
+#         n1 = int(input('Insira o valor 1° : '))
+#         n2 = int(input('Insira o valor 2° : '))
+#     elif op == 5:
+#         break;
+    
+#60° desafio (Fatorial de um numero)
+#Fatorial usando o for
+# n = int(input('Insira um numero : '))
+# fat = 1
+# for c in range(1, n + 1):
+#     fat = fat * c
+# print('Fatorial de {} é {}'.format(n, fat))
+
+#Fatorial usando o while
+# n = int(input('Insira um numero : '))
+# i = 1
+# fat = 1
+# while i != n + 1: #Tanto no 'for' quanto no 'while', essas estruturas excluem o ultimo valor do parametro de parada do loop, por isso é necessario adicionar +1 a variavel n nesse desafio
+#     fat = fat * i
+#     i += 1
+    
+# print('O fatorial do numero {} é {}'.format(n, fat))
+
+#61° desafio (Fazer uma pa)
+# n = int(input('Insira o 1° termo : '))
+# r = int(input('Insira a razao : '))
+# enesimo = n + (10 - 1) * r
+# while enesimo :
+#     print('{}'.format(n))
