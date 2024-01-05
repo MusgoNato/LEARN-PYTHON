@@ -408,6 +408,68 @@
 #61° desafio (Fazer uma pa)
 # n = int(input('Insira o 1° termo : '))
 # r = int(input('Insira a razao : '))
-# enesimo = n + (10 - 1) * r
-# while enesimo :
-#     print('{}'.format(n))
+# i = 10
+# j = 0
+# while i >= j:
+#     enesimo = n + (i * r)
+#     print('{}'.format(enesimo), end= ' ')
+#     i -= 1
+        
+#62° desafio (Fazer uma pa e o usuario pode pedir mais termos)
+# n = int(input('Insira o 1° termo : '))
+# r = int(input('Insira a razao : '))
+# i = 10
+# j = 0
+# while i >= j:
+#     enesimo = n + (i * r)
+#     print('{}'.format(enesimo), end= ' ')
+#     i -= 1
+#     if i == j:
+#         op = int(input('\nQuantos termos a mais voce vai querer? '))
+#         if op == 0:
+#             break;
+#         else:
+#             i += 10 + op
+
+#63° desafio (Sequencia de fibonacci) #Nao consegui fazer
+# # n = int(input('Insira um numero : '))
+# # i = 0
+# # fib = 0
+# # while i <= n:
+# #     i += 1
+# #     print('| {}'.format(fib), end=' ')
+# #     fib = (i - 1) + (i - 2) 
+
+#64° desafio (Ler numeros ate o usuario digitar 999, contar quantos numeros foram digitados e a soma entre eles)
+# contador = 0
+# soma = 0
+# op = 0
+# while op != 999:
+#         n = int(input('Insira um numero : '))
+#         if n != 999:
+#             contador += 1
+#             soma += n
+#         else:
+#             op = n
+#             print('{} numeros digitados e a soma deu {}'.format(contador, soma), end=' ')
+#             break;
+
+#65° desafio (Ler numeros ate o usuario nao querer mais, mostrar a media entre todos e qual foi o maior e menor valor lido)
+# media = 0.0
+# soma = 0
+# cont = 0
+# valores = []
+# op = True
+# while op:
+#     n = int(input('Insira um numero : '))
+#     valores.append(n)
+#     cont += 1
+#     soma += n
+#     s_n = str(input('Quer continuar? S/N')).strip().upper()
+#     if s_n == 'N':
+#         op = False
+
+# media = soma/cont
+# ma_x = max(valores)
+# mi_n = min(valores)
+# print('Menor {} e Maior {}, Media : {}'.format(mi_n, ma_x, media))
