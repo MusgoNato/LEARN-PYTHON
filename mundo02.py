@@ -498,3 +498,87 @@
 # ma_x = max(valores)
 # mi_n = min(valores)
 # print('Menor {} e Maior {}, Media : {}'.format(mi_n, ma_x, media))
+
+#Referente a aula 15
+#No python so existe o for e o while, porem nao quer dizer que eu nao possa simular um 'do while' ou um 'repeat'
+#no python nao se declara variaveis, so inicializa elas
+#cont = 1
+#O comando break quebra o loop, sai fora dele
+# while cont <= 10:
+#     print(cont, '-> ', end='')
+#     cont += 1
+# print('Acabou')
+
+#PEP - > Proposta de melhoria do python
+#Interpolação é intercalação das palavras, ou seja, o que esta nas chaves vao ser trocados pelas variaveis dentro do próprio
+#print(f'A soma vale {variavel aqui dentro}')
+
+#66° desafio (Ler infinitamente numeros ate o ususario digitar 999, contar quantos numeros foram digitados e a soma entre eles)
+# n = soma = cont = 0
+# while True:
+#     n = int(input('Digite um valor (999 para parar): '))
+#     if n == 999:
+#         break;
+#     else:
+#         cont += 1
+#         soma += n
+
+# print(f'A soma dos {cont} valores foi {soma}')
+
+#67° desafio (Tabuada de valores, o criterio de parada é qualquer numero negativo)
+# mult = 1
+# i = 0
+# while True:
+#     print(20*'-')
+#     n = int(input('Quer ver a tabuada de qual valor? '))
+#     if n <= 0:
+#         break;
+#     else:
+#         print(20*'-')
+#         for i in range(1, 11):
+#             mult = n * i
+#             print(f'{n} X {i} = {mult}')
+# print('PROGRAMA TABUADA ENCERRADO. Volte sempre!')
+
+#68° desafio (Jogar par ou impar com o computador e mostrar o total de vitorias do jogador)
+# from random import randint
+# aux = soma = 0 #Valor pra guardar o resto por 2 == 0
+# print(20*'=')
+# print('VAMOS JOGAR PAR OU ÍMPAR')
+# while True:
+#     print(20*'=')
+#     n = int(input('Insira um valor : '))
+#     n_pc = randint(1, 11)
+#     player = str(input('Par ou Ímpar? [P/I] ')).strip().upper()[0]
+#     soma = n + n_pc
+#     if player == 'P': #Condição para caso o jogador ser par
+#         if soma % 2 == 0:
+#             print(20*'-')
+#             print(f'Você jogou {n} e o computador {n_pc}. Total de {soma} deu PAR')
+#             print(20*'-')
+#             print('Você VENCEU!')
+#             print('Vamos jogar novamente...')
+#             aux += 1
+#         else:
+#             print(20*'-')
+#             print('Você PERDEU!')
+#             print(20*'=')
+#             print(f'GAME OVER! Voce venceu {aux} vezes')
+#             break;
+#     elif player == 'I':
+#         if soma % 2 == 1:
+#             print(20*'-')
+#             print(f'Você jogou {n} e o computador {n_pc}. Total de {soma} deu ÍMPAR')
+#             print(20*'-')
+#             print('Você VENCEU!')
+#             print('Vamos jogar novamente...')
+#             aux += 1
+#         else:
+#             print(20*'-')
+#             print('Você PERDEU!')
+#             print(20*'=')
+#             print(f'GAME OVER! Você venceu {aux} vezes')
+#             break;
+#
+
+#69° desafio ()
