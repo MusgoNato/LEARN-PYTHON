@@ -341,7 +341,15 @@
 
 #57° desafio (Fazer um programa que leia o sexo de uma pessoa, sendo m ou f, caso esteja errado pedir novamente ate ter o valor correto)
 # sexo = ''
+
+# #Modo de loop mais simplificado do que o tradicional
+# #while sexo not in 'MmFf': #Aqui a traducao ficaria 'enquanto sexo nao é encontrado dentro de M ou m ou F ou f, dai ele continua rodando o código'
+
 # while sexo != 'F' and sexo != 'M':
+
+#     #Modo de leitura um pouco mais simples
+#     #sexo = str(input('Informe seu sexo : [M/F]')).strip().upper()[0] #Esse [0] vai pegar somente a primeira letra da string
+     
 #     sexo = str(input('Insira seu gênero: ')).strip().upper()
 #     if sexo == 'M':
 #         print('Você é menino!')
@@ -357,18 +365,22 @@
 # player = 0
 # while pc != player:
 #     player = int(input('Insira um numero: '))
+#     palpites += 1
 #     if pc == player:
 #         print('Parabens voce acertou o numero, foram necessarios {} palpites'.format(palpites))
 #         break;
-#     palpites += 1
+#     if player < pc:
+#         print('Mais, tente novamente | ', end=' ')
+#     else:
+#         print('Menos, tente novamente | ', end=' ')
 
 #59° desafio (Criar programa que le 2 valores e ter um menu pra realizar a operacao solicitada, somar, maior, multiplicar, novos numeros, ou sair)
 # import os
 # from time import sleep
-# op = 0
+# op = True
 # n1 = int(input('Insira o valor 1° : '))
 # n2 = int(input('Insira o valor 2° : '))
-# while op != 5:
+# while op:
 #     print('[1]SOMAR\n[2]MAIOR\n[3]MULTIPLICAR\n[4]NOVOS NUMEROS\n[5]SAIR\n')
 #     op = int(input('Insira a opção : '))
 #     os.system('cls')
@@ -385,7 +397,7 @@
 #         n1 = int(input('Insira o valor 1° : '))
 #         n2 = int(input('Insira o valor 2° : '))
 #     elif op == 5:
-#         break;
+#         op = False
     
 #60° desafio (Fatorial de um numero)
 #Fatorial usando o for
@@ -400,10 +412,20 @@
 # i = 1
 # fat = 1
 # while i != n + 1: #Tanto no 'for' quanto no 'while', essas estruturas excluem o ultimo valor do parametro de parada do loop, por isso é necessario adicionar +1 a variavel n nesse desafio
-#     fat = fat * i
+#     fat *= i
 #     i += 1
-    
 # print('O fatorial do numero {} é {}'.format(n, fat))
+
+#Um jeito diferente de fazer a condição
+# print('{}'.format(i), end=' ')
+# print(' X ' if i > 1 else ' = ', end=' ')
+
+
+#Outro jeito de fazer
+# from math import factorial
+# n = int(input('Insira um numero : '))
+# fact = factorial(n)
+# print(n)
 
 #61° desafio (Fazer uma pa)
 # n = int(input('Insira o 1° termo : '))
@@ -432,19 +454,22 @@
 #             i += 10 + op
 
 #63° desafio (Sequencia de fibonacci) #Nao consegui fazer
-# # n = int(input('Insira um numero : '))
-# # i = 0
-# # fib = 0
-# # while i <= n:
-# #     i += 1
-# #     print('| {}'.format(fib), end=' ')
-# #     fib = (i - 1) + (i - 2) 
+# n = int(input('Insira um numero : '))
+# i = 3
+# p_termo = 0
+# s_termo = 1
+# print('{} | {}'.format(p_termo, s_termo), end=' ')
+# while i <= n:
+#     t_termo = p_termo + s_termo
+#     print('| {}'.format(t_termo), end=' ')
+#     #Aqui existe a troca dos termos, fazendo isso o primeiro numero da sequencia soma com o segundo e assim por diante
+#     p_termo = s_termo
+#     s_termo = t_termo
+#     i += 1
 
 #64° desafio (Ler numeros ate o usuario digitar 999, contar quantos numeros foram digitados e a soma entre eles)
-# contador = 0
-# soma = 0
-# op = 0
-# while op != 999:
+# contador = soma = op = 0
+# while op != 999: #Flag é um criterio de parada, nesse caso e o 999
 #         n = int(input('Insira um numero : '))
 #         if n != 999:
 #             contador += 1
@@ -459,16 +484,16 @@
 # soma = 0
 # cont = 0
 # valores = []
-# op = True
-# while op:
-#     n = int(input('Insira um numero : '))
-#     valores.append(n)
-#     cont += 1
-#     soma += n
-#     s_n = str(input('Quer continuar? S/N')).strip().upper()
-#     if s_n == 'N':
-#         op = False
-
+# op = 'S'
+# while op != 'N': #while op not 'Ss' -> Outro jeito de fazer caso nao estivesse tratando as letras maiusculas
+#     if op != 'S' and op != 'N':
+#         op = str(input('Dados invalidos, tente novamente : ')).strip().upper()
+#     else:
+#         n = int(input('Insira um numero : '))
+#         valores.append(n)
+#         cont += 1
+#         soma += n
+#         op = str(input('Quer continuar? S/N : ')).strip().upper()
 # media = soma/cont
 # ma_x = max(valores)
 # mi_n = min(valores)
