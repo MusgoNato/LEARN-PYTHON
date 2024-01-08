@@ -581,4 +581,54 @@
 #             break;
 #
 
-#69° desafio ()
+#69° desafio (Idade e sexo lidos de varias pessoas, cada pessoa deve o programa perguntar se quer continuar ou nao, no final mostrar pessoas maiores de 18, quantos homens foram cadastrados e quantas mulheres com menos de 20 anos)
+# anos = quant_f = quant_m = 0
+# op = 1
+# while op:
+#     idade = int(input('insira a idade : '))
+#     sexo = str(input('Insira o sexo : [F/M] ')).strip().upper()[0]
+#     if sexo == 'F' or sexo == 'M':
+#         yes_not = str(input('Quer continuar? [S/N]')).strip().upper()[0]
+#         if yes_not == 'S' or yes_not == 'N':
+#             if idade >= 18:
+#                 anos += 1
+#             if sexo == 'M':
+#                 quant_m += 1
+#             if sexo == 'F' and idade < 20:
+#                 quant_f += 1
+#         if yes_not == 'N':
+#             break;
+# print(':FIM DO PROGRAMA')
+# print(f'Total de pessoas com mais de 18 anos : {anos}')
+# print(f'Ao todo temos {quant_m} homens cadastrados')
+# print(f'E temos {quant_f} mulheres com menos de 20 anos')
+
+#70° desafio (Ler varios preço de produtos e perguntar se quer continuar, mostrar qual o total gasto na compra, quantos produtos custam mais de 1000 e produto mais barato)
+# total = 0.0
+# cont = menor = 0
+# op = 'S'
+# produtos = []
+# valores = []
+# while True:
+#     produto = str(input('Insira o nome do produto : ')).strip()
+#     valor = float(input('Insira o valor : '))
+#     valores.append(valor)
+#     produtos.append(produto)
+#     op = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
+#     while op != 'S' and op != 'N':
+#         op = str(input('Quer continuar? [S/N] '))
+#     if valor > 1000:
+#         cont += 1
+#     total += valor
+#     produto_barato_indice = valores.index(min(valores)) #Pega o produto mais barato, lembrando que a variavel vai guardar o indice da verificacao do menor valor na lista valores, pegando o indice pode pegar o nome do produto tambem, colocando como indice a varival 
+#     if op == 'N':
+#         break;
+
+# print(f'O total da compra foi de R${total}')
+# print(f'Temos {cont} produtos custando mais de R$1000.00')
+# print(f'O produto mais barato foi {produtos[produto_barato_indice]} que custa R${min(valores)}')
+
+#71° desafio (simular um caixa eletronico, perguntar qual o valor a ser sacado em inteiro, o programa deve informar quantas cedulas vao ser entregues para o usuario, considerando que o caixa possui cedulas de 50, 20, 10 e 1)
+
+while True:
+    valor = int(input('Qual o valor a ser sacado? '))
