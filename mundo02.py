@@ -630,5 +630,40 @@
 
 #71° desafio (simular um caixa eletronico, perguntar qual o valor a ser sacado em inteiro, o programa deve informar quantas cedulas vao ser entregues para o usuario, considerando que o caixa possui cedulas de 50, 20, 10 e 1)
 
-while True:
-    valor = int(input('Qual o valor a ser sacado? '))
+#cedulas
+#50, 20, 10 e 1
+#Contador de cedulas e a outra variavel vai armazenar o valor e ira dividindo com as celulas disponiveis
+# # cont_50 = cont_20 = cont_10 = cont_1 = 0
+# # valor = int(input('Qual o valor você quer sacar? '))
+# # armazena_valor = controle = valor
+# # while True:
+# #         if controle >= cont_50 * 50:
+# #             armazena_valor //= 50 #Armazena as cedulas
+# #             cont_50 += 1 #Conta as cedulas tambem
+# #             controle -= armazena_valor * cont_50 #Controla as cedulas
+# #             valor %= cont_50 * 50 #Pega o restante da divisao pra ser divido posteriormente
+# #         elif valor >= cont_20 * 20:
+# #             armazena_valor = valor
+# #             armazena_valor //= 20 #Aqui ele divide por 20 e vai dar zero
+# #             cont_20 += 1
+# #             controle -= armazena_valor * cont_20
+# #             valor %= cont_20 * 20
+# #         elif valor >= cont_10 * 10:
+# #              armazena_valor = valor
+# #              armazena_valor //= 10
+# #              cont_10 += 1
+# #              controle -= armazena_valor * 20
+# #              valor %= cont_20 * 10
+# #         elif valor >= cont_1 * 1:
+# #              armazena_valor = valor
+# #              armazena_valor //= 1
+# #              cont_1 += 1
+# #              controle -= armazena_valor * 20
+# #              valor %= cont_20 * 1
+# #         else:
+# #             break;
+# # print(f'Total de {cont_50 - 1} cedulas de R$50')
+# # print(f'Total de {cont_20} cedulas de R$20')
+# # print(f'Total de {cont_10} cedulas de R$10')
+# # print(f'Total de {armazena_valor} cedulas de R$1')
+     
