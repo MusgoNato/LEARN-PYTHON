@@ -548,9 +548,11 @@
 # while True:
 #     print(20*'=')
 #     n = int(input('Insira um valor : '))
-#     n_pc = randint(1, 11)
-#     player = str(input('Par ou Ímpar? [P/I] ')).strip().upper()[0]
+#     n_pc = randint(0, 11)
 #     soma = n + n_pc
+#     player = ' ' #Pro while de baixo, é necessario inicializar essa variavel com espaço vazio
+#     while player not in 'PI': #Desse jeito eu consigo fazer um loop enquanto for diferente do valor que eu quero pra fazer o jogo
+#         player = str(input('Par ou Ímpar? [P/I] ')).strip().upper()[0]
 #     if player == 'P': #Condição para caso o jogador ser par
 #         if soma % 2 == 0:
 #             print(20*'-')
@@ -579,26 +581,30 @@
 #             print(20*'=')
 #             print(f'GAME OVER! Você venceu {aux} vezes')
 #             break;
-#
+
 
 #69° desafio (Idade e sexo lidos de varias pessoas, cada pessoa deve o programa perguntar se quer continuar ou nao, no final mostrar pessoas maiores de 18, quantos homens foram cadastrados e quantas mulheres com menos de 20 anos)
 # anos = quant_f = quant_m = 0
-# op = 1
-# while op:
+# yes_not = ' '
+# sexo = ' ' #Caso eu coloque só '' ele me da erro o programa, por algum acaso é necessario inicializar a variavel com o espaço vazio e '' nao conta como espaço vazio
+# while True:
 #     idade = int(input('insira a idade : '))
-#     sexo = str(input('Insira o sexo : [F/M] ')).strip().upper()[0]
-#     if sexo == 'F' or sexo == 'M':
+#     while sexo not in 'FM':
+#         sexo = str(input('Insira o sexo : [F/M] ')).strip().upper()[0]
+#     while yes_not not in 'SN':
 #         yes_not = str(input('Quer continuar? [S/N]')).strip().upper()[0]
-#         if yes_not == 'S' or yes_not == 'N':
-#             if idade >= 18:
-#                 anos += 1
-#             if sexo == 'M':
-#                 quant_m += 1
-#             if sexo == 'F' and idade < 20:
-#                 quant_f += 1
-#         if yes_not == 'N':
-#             break;
-# print(':FIM DO PROGRAMA')
+#     if yes_not == 'S' or yes_not == 'N':
+#         if idade >= 18:
+#             anos += 1
+#         if sexo == 'M':
+#             quant_m += 1
+#         if sexo == 'F' and idade < 20:
+#             quant_f += 1
+#     if yes_not == 'N':
+#         break;
+#     sexo = ' '
+#     yes_not = ' '
+# print('FIM DO PROGRAMA')
 # print(f'Total de pessoas com mais de 18 anos : {anos}')
 # print(f'Ao todo temos {quant_m} homens cadastrados')
 # print(f'E temos {quant_f} mulheres com menos de 20 anos')
@@ -606,17 +612,17 @@
 #70° desafio (Ler varios preço de produtos e perguntar se quer continuar, mostrar qual o total gasto na compra, quantos produtos custam mais de 1000 e produto mais barato)
 # total = 0.0
 # cont = menor = 0
-# op = 'S'
+# op = ' '
 # produtos = []
 # valores = []
 # while True:
-#     produto = str(input('Insira o nome do produto : ')).strip()
+#     produto = str(input('Insira o nome do produto : ')).strip().upper()
 #     valor = float(input('Insira o valor : '))
 #     valores.append(valor)
 #     produtos.append(produto)
-#     op = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
-#     while op != 'S' and op != 'N':
-#         op = str(input('Quer continuar? [S/N] '))
+#     op = ' ' #Reinicio a variavel pra dar certo o while
+#     while op not in 'SN':
+#         op = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
 #     if valor > 1000:
 #         cont += 1
 #     total += valor
@@ -627,43 +633,38 @@
 # print(f'O total da compra foi de R${total}')
 # print(f'Temos {cont} produtos custando mais de R$1000.00')
 # print(f'O produto mais barato foi {produtos[produto_barato_indice]} que custa R${min(valores)}')
-
+#print(f'O total da compra deu {total:2.f}') #Da pra fazer desse jeito a formatação da saida do valor, nesse caso ele vai me apresentar o valor com 2 casas decimais
+#print('{:-^40}'.format('FIM DO PROGRAMA')) #O circunflexo vai centralizar minha msg
 #71° desafio (simular um caixa eletronico, perguntar qual o valor a ser sacado em inteiro, o programa deve informar quantas cedulas vao ser entregues para o usuario, considerando que o caixa possui cedulas de 50, 20, 10 e 1)
 
 #cedulas
 #50, 20, 10 e 1
 #Contador de cedulas e a outra variavel vai armazenar o valor e ira dividindo com as celulas disponiveis
-# # cont_50 = cont_20 = cont_10 = cont_1 = 0
-# # valor = int(input('Qual o valor você quer sacar? '))
-# # armazena_valor = controle = valor
-# # while True:
-# #         if controle >= cont_50 * 50:
-# #             armazena_valor //= 50 #Armazena as cedulas
-# #             cont_50 += 1 #Conta as cedulas tambem
-# #             controle -= armazena_valor * cont_50 #Controla as cedulas
-# #             valor %= cont_50 * 50 #Pega o restante da divisao pra ser divido posteriormente
-# #         elif valor >= cont_20 * 20:
-# #             armazena_valor = valor
-# #             armazena_valor //= 20 #Aqui ele divide por 20 e vai dar zero
-# #             cont_20 += 1
-# #             controle -= armazena_valor * cont_20
-# #             valor %= cont_20 * 20
-# #         elif valor >= cont_10 * 10:
-# #              armazena_valor = valor
-# #              armazena_valor //= 10
-# #              cont_10 += 1
-# #              controle -= armazena_valor * 20
-# #              valor %= cont_20 * 10
-# #         elif valor >= cont_1 * 1:
-# #              armazena_valor = valor
-# #              armazena_valor //= 1
-# #              cont_1 += 1
-# #              controle -= armazena_valor * 20
-# #              valor %= cont_20 * 1
-# #         else:
-# #             break;
-# # print(f'Total de {cont_50 - 1} cedulas de R$50')
-# # print(f'Total de {cont_20} cedulas de R$20')
-# # print(f'Total de {cont_10} cedulas de R$10')
-# # print(f'Total de {armazena_valor} cedulas de R$1')
-     
+
+#Como nao consegui fazer vou explicar
+#O programa ele vai ter uma variavel que vai ser a primeira cedula, dentro do programa, rodando em loop infinito caso nao for apos saber que o valor que
+#foi dado é maior que a cedula inicial, no caso 50, e decrementado 50 do total do valor, ou seja o montante inicial maior entao quer dizer que as notas
+#de 50 maximas que da pra tirar do montante ja alcançaram seu limite e assim a variavel que controla as notas recebera a proxima nota, no caso 20, E assim
+#por diante vai, no final é feito uma verificação caso o montante chegue no zero, pois caso verdadeiro nao é necessario continuar no loop e é 
+#colocado um break pra sair do programa
+
+# ced = 50 #Vai receber a primeira cedula pra depois ir recebendo o restante ate o valor chegar a zero
+# cont = 0 #Total de cedulas
+# valor = int(input('Qual o valor você quer sacar? '))
+# total = valor
+# while True:
+#     if total >= ced:
+#         total -= ced #Decrementa do montante
+#         cont += 1
+#     else:
+#         if cont > 0:
+#             print(f'Total de {cont} cédulas de R${ced}')
+#         if ced == 50:
+#             ced = 20
+#         elif ced == 20:
+#             ced = 10
+#         elif ced == 10:
+#             ced = 1
+#         cont = 0
+#         if total == 0:
+#             break;
