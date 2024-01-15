@@ -31,53 +31,98 @@ lanche = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim', 'Batata frita') #Mesmo sem co
 # del(pessoa) #Como ela é imutavel, existe o del pra deletar TODA A TUPLA, após isso é apagada da memória, assim posterior a esse comando a tupla não existira mais
 
 #72° desafio (Ler numero entre 0 e 20 e mostra-lo por extenso utilizando tuplas)
-# numeros = ('zero', 'um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez', 'onze', 'doze', 'treze', 'catorze', 'quinze', 'dezesseis', 'dezessete', 'dezoito', 'dezenove', 'vinte')
+# numeros = ('zero', 'um', 'dois', 'tres', 'quatro',
+#            'cinco', 'seis', 'sete', 'oito', 'nove',
+#             'dez', 'onze', 'doze', 'treze', 'catorze',
+#             'quinze', 'dezesseis', 'dezessete',
+#             'dezoito', 'dezenove', 'vinte')
 
 # n = int(input('Insira um numero : '))
 # while True:
+#     #if 0 <= n <= 20 #Da pra fazer desse jeito tambem a lógica do or pra intervalos de um numero a outro
 #     if n < 0 or n > 20:
 #         n = int(input('Número fora do intervalo de 0 a 20. Insira um número: '))
 #     else:
 #         cont = numeros.index(numeros[n])
 #         print(f'{numeros[cont].upper()}') #Dá de eu fazer isso pois estou escrevendo uma string, na inicialização não é possível
-#         break;
+#         op = str(input('Quer continuar? [S/N]')).strip().upper()[0]
+#         if op =='N':
+#             break;
+#         else:
+#             n = int(input('Insira um numero : '))
+
 
 #73° desafio (Tupla com 20 primeiros colocados da tabela do campeonato brasileiro, mostrar 5 primeiros colocados,
 #os ultimos 4 colocados, uma lista com times em ordem alfabética e em que posicao da tabela esta o time da chapecoense)
-# times = ('Palmeiras', 'Grêmio', 'Atlético-MG', 'Flamengo', 'Botafogo', 'Red Bull Bragantino', 'Fluminense', 'Athletico-PR', 'Internacional', 'Fortaleza', 'São Paulo', 'Cuibá', 'Corinthians', 'Cruzeiro', 'Vasco', 'Bahia', 'Santos', 'Goiás', 'Coritiba', 'América-MG')
-# print(times[0:5]) #Primeiros 5 times
-# print(times[20:15:-1]) #Ultimos 4 colocados
-# print(sorted(times)) #Ordem alfabética
+# times = ('Palmeiras', 'Grêmio', 'Atlético-MG', 'Flamengo', 'Botafogo', 'Red Bull Bragantino',
+#           'Fluminense', 'Athletico-PR', 'Internacional', 'Fortaleza', 'São Paulo',
+#             'Cuibá', 'Corinthians', 'Cruzeiro', 'Vasco', 'Bahia', 'Santos', 'Goiás', 'Coritiba', 'América-MG')
+# print(f'Primeiros 5 colocados : {times[0:5]}') #Primeiros 5 times
+# print(f'Últimos 4 colocados : {times[20:15:-1]}') #Ultimos 4 colocados
+# print(f'Times em ordem alfabética : {sorted(times)}') #Ordem alfabética
 # for i, cont in enumerate(times): #É necessário o cont pra ser uma variavel composta pra enumeração do times
 #     if 'Chapecoense' in times[i]:
 #         print(f'Chapecoense está na posição {i + 1}')
 
 #74° desafio (Gerar cinco numeros aleatorios e colocar em uma tupla, depois mostrar a listagem de numeros, indicando o maior e o menor valor lidos)
 # from random import randint
-# numeros = randint(0, 6), randint(0, 6), randint(0, 6), randint(0, 6), randint(0, 6)
+# numeros = randint(0, 10), randint(0, 10), randint(0, 10), randint(0, 10), randint(0, 10) #Como uma tupla nao da pra inserir valores, pois sao imutaveis, a nao ser de ela ser deletada, porem consigo em cada posição da tupla, gerar um numero aleatório, é o que o programa realiza nessa linha
 
+# #print(numeros[:]) #Dá pra fazer desse jeito sem repetição nenhuma
 # for i, cont in enumerate(numeros):
 #     print(f'{numeros[i]}',end=' ')
+# # for i in numeros: #Dá pra fazer dess outro jeito, que é mais facil ainda
+# #     print(f'{n}', end=' ')
 # menor = min(numeros)
-# maior = max(numeros)
+# maior = max(numeros) #Max é 'Específico' das tuplas, funciona em outros lugares mas é especifico delas
 # print(f'\nMaior {maior} e menor {menor}')
 
 #75° desafio (Ler 4 valores do teclado e guardar na tupla, saber quantas vezes o valor nove apareceu, em que posicao o 3 ta, quais foram os numeros pares)
-# # num1 = int(input('Digite um numero : '))
-# # num2 = int(input('Digite outro numero : '))
-# # num3 = int(input('Digite mais um numero : '))
-# # num4 = int(input('Digite o último numero : '))
-# # valores = (num1, num2, num3, num4)
-# # cont = valores.count(9)
-# # print(f'Você digitou os valores : {valores}')
-# # print(f'Foram {cont} vezes que o 9 apareceu')
-# # aux2 = 0
-# # for i in range(len(valores)):
-# #     if 3 not in valores[:]:
-# #         print('Não foi encontrado')
-# #     else:
-# #         aux = valores.index(valores[aux2])
-# #         print(aux)
-# #         break;
-# #     aux2 += 1
+# num1 = int(input('Digite um numero : '))
+# num2 = int(input('Digite outro numero : '))
+# num3 = int(input('Digite mais um numero : '))
+# num4 = int(input('Digite o último numero : '))
+# #Dá pra fazer desse jeito abaixo, sem necessidade de criar varias variaveis
+# # num = (int(input('Insira um numero : ')), int(input('Insira um numero : ')),
+# #    int(input('Insira um numero : ')), int(input('Insira um numero : ')), )
 
+# valores = (num1, num2, num3, num4)
+# cont = valores.count(9)
+# print(f'Você digitou os valores : {valores}')
+# print(f'Foram {cont} vezes que o 9 apareceu')
+# aux2 = 0
+# for i in range(len(valores)):
+#     if valores[i] % 2 == 0:
+#         print(f'Numero par : {valores[i]}')
+#     else:
+#         if valores[i] == 3:
+#             aux = valores.index(valores[i])
+#             print(f'Posição do numero 3 é : {aux + 1}')
+#         if 3 not in valores[:]: #Por algum acaso, quando coloco alguma lógica como o not, nao posso procurar o numero com algun indice dentro da tupla, ele me da erro quando coloco alguma logica na condição
+#             print('\nO 3 Não foi encontrado')
+#             break;
+
+#76° desafio (Fazer uma listagem de preço utilizando apenas uma tupla)
+# tupla = ('Banana', 10.0, 'Pão', 1.50, 'Refrigerante', 3.50, 'Amoeba', 1.50, 'Caneta', 1.0, 'Celular', 120)
+# print(50*'=')
+# string = 'TABELA DE PREÇOS'
+# print(f'{string:^50}') #Centralizado em 50 espaços
+# print(50*'=')
+# for i in range(len(tupla)):
+#     if i % 2 == 0:
+#         print(f'{tupla[i]:.<40}', end='') #Alinhado a esquerda com 40 espaços
+#     else:
+#         print(f'R$  {tupla[i]:>6.2f}') #essa é uma formatação alinhada a direita em 6 espaços, depois é formatada a saída para float com 2 casas decimais usando 2.f
+# print(50*'=')
+
+#77° desafio (Tupla com varias palavras, mostra qual sao as vogais)
+# tupla = ('mercado', 'arroz', 'pao', 'agua', 'banana')
+# string = ''
+# for i in range(len(tupla)):
+#     string = tupla[i] #Cada posição da tupla é uma palavra, criei uma variavel pra receber cada palavra dessa
+#     print(f'\nAs vogais da palavra {string.upper()} são : ', end=' ')
+#     for j in range(len(string)): #De acordo com a palavra dentro da variavel string, varro toda ela e verifico ocorrência de vogais
+#         if string[j] == 'a' or string[j] == 'e' or string[j] == 'i' or string[j] == 'o' or string[j] == 'u': #Verificação das vogais
+#         #if string[j] in 'aeiou' #A mesma verficação feita de forma simples
+#             print(f'{string[j]}', end=' ') #Caso haja mostro na tela
+# print('\n')
