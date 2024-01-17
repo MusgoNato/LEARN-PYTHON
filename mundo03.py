@@ -126,3 +126,65 @@ lanche = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim', 'Batata frita') #Mesmo sem co
 #         #if string[j] in 'aeiou' #A mesma verficação feita de forma simples
 #             print(f'{string[j]}', end=' ') #Caso haja mostro na tela
 # print('\n')
+
+#Referente a aula 17
+# lanche.append('Coisa aqui') #Adiciona o elemento no parâmetro á lista
+# lanche.inser(0, 'Outra coisa') #Ele adiciona o parametro na posição 0 e 'empurra' os outros elementos para frente
+# del lanche[3] #Elimina o que esta na posição 3
+# lanche.pop(3) #normalmente usado pra remover o ultimo elemento, mas é possível passar o indice de quem quer deseja eliminar
+# lanche.remove('Coisa aqui') #elimina o elemento e reposiciona a contagem dos indices
+# lanche.pop() #Elimina o ultimo elemento sem passar nenhum parâmetro
+# #Caso tente remover algum elemento que nao esta na lista, ocorrera um erro na linguagem
+# if 'Coisa' in lanche: #verificação se algo esta na lista para remove-lo
+# lanche.remove('Coisa')
+# #Criação de listas atraves de range
+# valores = list(range(4, 11)) #cria uma lista de 4 ate 10 usando o range, podendo eu passar os parametros, posso colocar um 3 elemento que pula de 2 em dois ou 3 em tres
+# valores = [8,2,5,4,9,3,0]
+# valores.sort() #Vai ordenar os elementos da lista
+# valores.sort(reverse=True) #Aqui ocorre a ordenação na ordem reversa da lista
+# len(valores) #Retorna o tamanho da lista
+
+#Tupla
+# num = (2,7,9,1)
+# print(num)
+# # num[2] = 3 #Erro pois é uma tupla
+# num = [2,7,9,1]
+# num[2] = 3 #Aqui não ocorre erro pois a lista é mutavel
+# num = [2,5,9,1]
+# num.append(4) #Adiciona valores
+# num.sort(reverse=True) #Ordena na ordem inversa a lista
+# num.append(2, 0) #Insere o 0 na posição 2
+# num.pop(2) #Ele remove o que esta no indice 0 da lista
+# num.remove(2) #Ele remove o valor passado, caso haja valores iguais, ele remove apenas o primeiro que aparecer com base no parâmetro
+
+#Lista mais bonita
+# valores = list()
+# valores.append(5)
+# valores.append(9)
+# valores.append(4)
+
+# for i in range(0, 5):
+#     # n = int(input('Insira um valor : '))
+#     # valores.append(n)
+#     valores.append(int(input('Insira um valor : '))) #Dá pra fazer diretamente desse jeito
+# for c, v in enumerate(valores):
+#     print(f'Posição {c}, valor é {v}')
+
+# a = [1,2,3,4]
+# b = a #Ligação entre listas
+#Caso eu coloque algum valor dentro de 'b', a lista 'a' sofrera com a inserção de 'b', pois o python cria uma ligação entre ela
+
+#Pra fazer uma cópia de uma lista para outra e não uma ligação
+# a = [1,2,3,4,5]
+# b = a[:] #Aqui a leitura seria, 'b' recebe todos os itens de 'a', ou seja todos os valores são jogados em 'b', umma cópia perfeita da lista 'a'
+# b[2] = 8 #Aqui sim a lista 'b' ela muda e a lista 'a' continua com os valores iniciais
+# # É como as estruturas em C, caso um ponteiro aponte a elas, há mudança na estrutura como um todo, caso nao haja um ponteiro pra apontar para os elementos é criado uma cópia perfeita da estrutura original
+
+#78° desafio (Ler 5 valores numericos, mostrar o maior e menor valor com suas respectivas posições considerando caso haja valores iguais)
+valores = []
+cont = 0
+while cont != 5:
+    valores.append(int(input('Insira um valor :  ')))
+    cont += 1
+for i in valores:
+    print(valores)
