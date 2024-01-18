@@ -181,10 +181,40 @@ lanche = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim', 'Batata frita') #Mesmo sem co
 # # É como as estruturas em C, caso um ponteiro aponte a elas, há mudança na estrutura como um todo, caso nao haja um ponteiro pra apontar para os elementos é criado uma cópia perfeita da estrutura original
 
 #78° desafio (Ler 5 valores numericos, mostrar o maior e menor valor com suas respectivas posições considerando caso haja valores iguais)
-valores = []
-cont = 0
-while cont != 5:
-    valores.append(int(input('Insira um valor :  ')))
-    cont += 1
-for i in valores:
-    print(valores)
+# valores = []
+# aux = []
+# aux2 = []
+# cont = 0
+# while cont != 5:
+#     valores.append(int(input('Insira um valor :  ')))
+#     cont += 1
+# for i, cont in enumerate(valores):
+#     menor = min(valores)
+#     maior = max(valores)
+#     if menor == valores[i]:
+#         aux.append(i)
+#     if maior == valores[i]:
+#         aux2.append(i)
+# print(f'O valor maior da lista é {maior} na respectiva posição : {aux2[:]}')
+# print(f'O valor menor da lista é {menor} na respectiva posição : {aux[:]}')
+
+#79° desafio (Digitar varios valores numéricos, caso o numero ja exista la dentro, ele nao será adicionado, exibir os valores unicos digitados em ordem crescente)
+# # lista = []
+# # j = 0
+# # while True:
+# #     lista.append(int(input('Insira um número : ')))
+# #     aux = lista[j]
+# #     for i in range(1, len(lista)):
+# #         if aux == lista[i]: #verificação caso haja um valor duplicado na lista
+# #             print('Valor duplicado nao vou adiconar!')
+# #             lista.pop()
+# #             i = len(lista)
+# #     op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
+# #     while 'N' != op != 'S': #loop infinito até o usuario digitar corretamene (Tratamento de erros)
+# #         op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
+# #     if op == 'N':
+# #         break;
+# #     j += 1
+# # lista.sort() #Ordena a lista
+# # print(f'Você digitou os valores {lista}')
+# # # print(f'Você digitou os valores {lista.sort()}') #Caso eu mande imprimir desse jeito, me retornara  NONE, isso ocorre devido a impressao, o retorno desse metodo é o NONE, porem ele modifica a lista e a ordena, mas para aparecer na tela tem que fazer isso antes
