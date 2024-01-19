@@ -2,7 +2,7 @@
 #As tuplas sao imutaveis, nao é possivel fazer a mudança de algum valor armazenado dentro da tupla, ela ficara assim ate o final do programa
 #Durante a execução nao tem como mudar a tupla, só se parar trocar os valores e reiniciar o programa
 
-lanche = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim', 'Batata frita') #Mesmo sem colocar parenteses o python considera como tupla
+# lanche = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim', 'Batata frita') #Mesmo sem colocar parenteses o python considera como tupla
 # print(lanche[1])
 
 #for cont in range(0, len(lanche):
@@ -129,7 +129,7 @@ lanche = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim', 'Batata frita') #Mesmo sem co
 
 #Referente a aula 17
 # lanche.append('Coisa aqui') #Adiciona o elemento no parâmetro á lista
-# lanche.inser(0, 'Outra coisa') #Ele adiciona o parametro na posição 0 e 'empurra' os outros elementos para frente
+# lanche.insert(0, 'Outra coisa') #Ele adiciona o parametro na posição 0 e 'empurra' os outros elementos para frente
 # del lanche[3] #Elimina o que esta na posição 3
 # lanche.pop(3) #normalmente usado pra remover o ultimo elemento, mas é possível passar o indice de quem quer deseja eliminar
 # lanche.remove('Coisa aqui') #elimina o elemento e reposiciona a contagem dos indices
@@ -199,22 +199,41 @@ lanche = ('Hambúrguer', 'Suco', 'Pizza', 'Pudim', 'Batata frita') #Mesmo sem co
 # print(f'O valor menor da lista é {menor} na respectiva posição : {aux[:]}')
 
 #79° desafio (Digitar varios valores numéricos, caso o numero ja exista la dentro, ele nao será adicionado, exibir os valores unicos digitados em ordem crescente)
+# lista = []
+# cont = 0
+# i = 0
+# while True:
+#     lista.append(int(input('Insira um número : ')))
+#     if i >= 1: #A partir do 2° valor faz a verificação na lista
+#         aux = lista[i]
+#         for i in range(len(lista) - 1): #Esse for ele vai ate o antipenultimo numero, tipo de 0 a 10, ele iria ate 9, onde esse seria o ultimo numero que eu digitei, subtraindo -1, chego no antipenultimo, assim eu nao vou ate o ultimo numero adicionado, vou ate um a menos que ele, pois caso fosse ao contrario o segundo valor adicionado nunca iria entrar na lista
+#             if aux == lista[i]:
+#                 print('Valor duplicado')
+#                 lista.remove(aux)
+#                 break;
+#     op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
+#     while 'N' != op != 'S': #loop infinito até o usuario digitar corretamene (Tratamento de erros)
+#         op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
+#     if op == 'N':
+#         break;
+#     i += 1
+# lista.sort() #Ordena a lista
+# print(f'Você digitou os valores {lista}')
+# # print(f'Você digitou os valores {lista.sort()}') #Caso eu mande imprimir desse jeito, me retornara  NONE, isso ocorre devido a impressao, o retorno desse metodo é o NONE, porem ele modifica a lista e a ordena, mas para aparecer na tela tem que fazer isso antes
+
+# 80 desafio (Guardar 5 numeros em uma lista e já na posição correta, sem usar o sort, no final mostrar ela ordenada)
 # # lista = []
-# # j = 0
-# # while True:
-# #     lista.append(int(input('Insira um número : ')))
-# #     aux = lista[j]
-# #     for i in range(1, len(lista)):
-# #         if aux == lista[i]: #verificação caso haja um valor duplicado na lista
-# #             print('Valor duplicado nao vou adiconar!')
-# #             lista.pop()
-# #             i = len(lista)
-# #     op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
-# #     while 'N' != op != 'S': #loop infinito até o usuario digitar corretamene (Tratamento de erros)
-# #         op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
-# #     if op == 'N':
-# #         break;
-# #     j += 1
-# # lista.sort() #Ordena a lista
-# # print(f'Você digitou os valores {lista}')
-# # # print(f'Você digitou os valores {lista.sort()}') #Caso eu mande imprimir desse jeito, me retornara  NONE, isso ocorre devido a impressao, o retorno desse metodo é o NONE, porem ele modifica a lista e a ordena, mas para aparecer na tela tem que fazer isso antes
+# # i = 0
+# # aux = 0
+# # menor = 0
+# # while i < 5:
+# #     if i <= len(lista):
+# #         lista.append(int(input('Insira um numero : ')))
+# #         print(f'Numero adicionado ao final da lista posição : {lista.index(lista[i])}')
+# #         if i > 0:
+# #             menor = min(lista)
+# #             for j in range(len(lista)):
+# #                 if menor < lista[j]:
+# #                     lista[j] = menor
+# #         i += 1
+# # print(f'\nLista ordenada : {lista[:]}')
