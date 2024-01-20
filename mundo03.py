@@ -276,3 +276,21 @@
 # print(f'Lista dos Ímpares : {impares}')
 
 # 83° desafio (Ler uma expressao e verificar se ela fecha os parenteses corretamente)
+exp = [] #expressao do usuario
+i = 0
+j = 0
+del_posi_parentes_abre = 0
+del_posi_parentes_fecha = 0
+exp.extend(input('Insira a expressão : ')) # O extend separa, ou seja cada elemento dentro é separado em poisiçoes, o append insere o que for dado no final da lista, o extend ele já insere na lista nas posições adequadas e nao no final
+for i in range(len(exp)):
+    if exp[i] == '(' or exp[i] == ')':
+        del_posi_parentes_abre = exp.index(exp[i]) #recebe o indice da abertura de parenteses
+        #Tem que achar o fechamento agora, dai deletar o indice que abre e depois o que fecha
+        if exp[j] == ')': #Nao ta entrando aqui, tem que achar um jeito de entrar e deletar os elementos de abrir e fechar os parenteses nas suas respectivas condições
+            print('asd')
+            exp.pop(del_posi_parentes_abre) #Da um pop na abertura
+            exp.pop(j) #Da um pop no fechamento
+print(exp)
+
+#O index ele pega somente a primeira ocorrencia, a logica ta errada pq toda vez pega somente o 1° parenteses que ta na 0° posição
+        
