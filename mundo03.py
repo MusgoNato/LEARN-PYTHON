@@ -224,16 +224,55 @@
 # 80 desafio (Guardar 5 numeros em uma lista e já na posição correta, sem usar o sort, no final mostrar ela ordenada)
 # # lista = []
 # # i = 0
-# # aux = 0
-# # menor = 0
 # # while i < 5:
-# #     if i <= len(lista):
-# #         lista.append(int(input('Insira um numero : ')))
-# #         print(f'Numero adicionado ao final da lista posição : {lista.index(lista[i])}')
-# #         if i > 0:
-# #             menor = min(lista)
-# #             for j in range(len(lista)):
-# #                 if menor < lista[j]:
-# #                     lista[j] = menor
-# #         i += 1
-# # print(f'\nLista ordenada : {lista[:]}')
+# #     lista.append(int(input('Insira um numero : ')))
+# #     index_maior = lista.index(max(lista)) #Pega o maior valor e sua respectiva posição dentro da lista
+# #     print(index_maior)
+# #     for j in range(1, len(lista)):
+# #         if lista[j] > lista[i]:
+# #             aux = lista[j]
+# #             lista[j] = lista[i]
+# #             lista[i] = aux
+# #     i += 1
+# # print(f'\nLista ordenada : {lista}')
+
+# 81 desafio (Varios numeros digitados, mostrar quantos foram, a lista ordenada de forma decrescente, se o valor 5 esta ou nao na lista)
+# valores = []
+# contagem = 0
+# while True:
+#     valores.append(int(input('Insira um numero : ')))
+#     contagem += 1
+#     op = str(input('Quer contiuar ? [S/N] ')).strip().upper()[0]
+#     while 'S' != op != 'N':
+#         op = str(input('Quer contiuar ? [S/N] ')).strip().upper()[0]
+#     if op == 'N':
+#         break;
+# if 5 in valores:
+#     print('5 está na lista')
+# else:
+#     print('5 não esta na lista')
+# valores.sort(reverse=True)
+# print(f'Lista ordenada de forma decrescente {valores}')
+
+# 82 desafio (Ler valores, colocar na 2 lista so pares e lista 3 so impares)
+# valores = []
+# pares = valores[:] #Cópia
+# impares = valores[:]
+# i = 0
+# while True:
+#     valores.append(int(input('insira um valor : ')))
+#     op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
+#     while 'S' != op != 'N':
+#         op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
+#     if op == 'N':
+#         break;
+#     if valores[i] % 2 == 0:
+#         pares.append(valores[i])
+#     else:
+#         impares.append(valores[i]) 
+#     i += 1
+# print(f'Lista completa : {valores}')
+# print(f'Lista dos Pares : {pares}')
+# print(f'Lista dos Ímpares : {impares}')
+
+# 83° desafio (Ler uma expressao e verificar se ela fecha os parenteses corretamente)
