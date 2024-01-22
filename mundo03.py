@@ -195,6 +195,7 @@
 #         aux.append(i)
 #     if maior == valores[i]:
 #         aux2.append(i)
+# # Pra nao ficar aparecendo esses colchetes eu poderia criar um for usando o enumerate e verificar o menor e maior valor dentro doo for e mandar imprimir na tela as posições
 # print(f'O valor maior da lista é {maior} na respectiva posição : {aux2[:]}')
 # print(f'O valor menor da lista é {menor} na respectiva posição : {aux[:]}')
 
@@ -222,19 +223,24 @@
 # # print(f'Você digitou os valores {lista.sort()}') #Caso eu mande imprimir desse jeito, me retornara  NONE, isso ocorre devido a impressao, o retorno desse metodo é o NONE, porem ele modifica a lista e a ordena, mas para aparecer na tela tem que fazer isso antes
 
 # 80 desafio (Guardar 5 numeros em uma lista e já na posição correta, sem usar o sort, no final mostrar ela ordenada)
-# # lista = []
-# # i = 0
-# # while i < 5:
-# #     lista.append(int(input('Insira um numero : ')))
-# #     index_maior = lista.index(max(lista)) #Pega o maior valor e sua respectiva posição dentro da lista
-# #     print(index_maior)
-# #     for j in range(1, len(lista)):
-# #         if lista[j] > lista[i]:
-# #             aux = lista[j]
-# #             lista[j] = lista[i]
-# #             lista[i] = aux
-# #     i += 1
-# # print(f'\nLista ordenada : {lista}')
+# lista = []
+# i = 0
+# while i < 5:
+#     n = int(input('Insira um numero : ')) #Não pode ser apppend pois na volta do loop nao sei qual o valor é o correto para o final da lista
+#     #Caso for o primeiro ou ultimo valor entao o append deve ser usado, pois ele adiciona ao final da lista, caso exista um valor ou doi funcionará corretamente
+#     if i == 0 or n > lista[len(lista) - 1]: #Se o numero que foi inserido pelo usuário for maior que o ultimo elemento que já esta na lista entao ele é adicionado ao final da lista usando o append tambem
+#         lista.append(n)
+#         print('Valor adicionado no final da lista')
+#     else: #Se nao for o 1° nem o ultimo valor, então está entre os valores digitados 
+#         entre = 0 #Guarda o valor que sera inserido na posição especifica entre 2 valores, ele deve começar com 0 pois toda vez terá que verificar toda a lista desde a 1° posição ate a ultima
+#         while entre < len(lista):
+#             if n <= lista[entre]: #Insere somente uma vez e sai do loop para depois recomeçar e varrer a lista de novo porem com outro valor
+#                 lista.insert(entre, n) #Insere na posição 'entre' o numero menor que o valor que esta na posição lista[entre]
+#                 print(f'Valor inserido na posição {entre}')
+#                 break;
+#             entre += 1 #Vai incrementando os valores até chegar no final da lista
+#     i += 1
+# print(f'Lista ordenada {lista}')
 
 # 81 desafio (Varios numeros digitados, mostrar quantos foram, a lista ordenada de forma decrescente, se o valor 5 esta ou nao na lista)
 # valores = []
@@ -250,47 +256,43 @@
 # if 5 in valores:
 #     print('5 está na lista')
 # else:
-#     print('5 não esta na lista')
+#     print('5 não está na lista')
 # valores.sort(reverse=True)
 # print(f'Lista ordenada de forma decrescente {valores}')
 
 # 82 desafio (Ler valores, colocar na 2 lista so pares e lista 3 so impares)
-# valores = []
-# pares = valores[:] #Cópia
-# impares = valores[:]
-# i = 0
-# while True:
-#     valores.append(int(input('insira um valor : ')))
-#     op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
-#     while 'S' != op != 'N':
-#         op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
-#     if op == 'N':
-#         break;
-#     if valores[i] % 2 == 0:
-#         pares.append(valores[i])
-#     else:
-#         impares.append(valores[i]) 
-#     i += 1
-# print(f'Lista completa : {valores}')
-# print(f'Lista dos Pares : {pares}')
-# print(f'Lista dos Ímpares : {impares}')
+valores = []
+pares = valores[:] #Cópia
+impares = valores[:]
+i = 0
+while True:
+    valores.append(int(input('insira um valor : ')))
+    op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
+    while 'S' != op != 'N':
+        op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
+    if op == 'N':
+        break;
+    if valores[i] % 2 == 0:
+        pares.append(valores[i])
+    else:
+        impares.append(valores[i])
+    i += 1
+print(f'Lista completa : {valores}')
+print(f'Lista dos Pares : {pares}')
+print(f'Lista dos Ímpares : {impares}')
 
 # 83° desafio (Ler uma expressao e verificar se ela fecha os parenteses corretamente)
-exp = [] #expressao do usuario
-i = 0
-j = 0
-del_posi_parentes_abre = 0
-del_posi_parentes_fecha = 0
-exp.extend(input('Insira a expressão : ')) # O extend separa, ou seja cada elemento dentro é separado em poisiçoes, o append insere o que for dado no final da lista, o extend ele já insere na lista nas posições adequadas e nao no final
-for i in range(len(exp)):
-    if exp[i] == '(' or exp[i] == ')':
-        del_posi_parentes_abre = exp.index(exp[i]) #recebe o indice da abertura de parenteses
-        #Tem que achar o fechamento agora, dai deletar o indice que abre e depois o que fecha
-        if exp[j] == ')': #Nao ta entrando aqui, tem que achar um jeito de entrar e deletar os elementos de abrir e fechar os parenteses nas suas respectivas condições
-            print('asd')
-            exp.pop(del_posi_parentes_abre) #Da um pop na abertura
-            exp.pop(j) #Da um pop no fechamento
-print(exp)
+# # str = [] #expressao do usuario
+# # aux = [] #Lista auxiliar pra armazenar os parenteses
+# # j = 0
+# # str.extend(input('Insira a expressão : ')) # O extend separa, ou seja cada elemento dentro é separado em poisiçoes, o append insere o que for dado no final da lista, o extend ele já insere na lista nas posições adequadas e nao no final
+# # i = len(str) - 1
+
+# # while i >= 0: #Começa na ordem inversa pra pegar o fechamento e ir ate achar uma abertura
+# #     while str[i] != '(': #Vai ate encontrar uma abertura
+# #         str.pop()
+# #         print('a')
+# #     i -= 1
+# # print(str, aux)
 
 #O index ele pega somente a primeira ocorrencia, a logica ta errada pq toda vez pega somente o 1° parenteses que ta na 0° posição
-        
