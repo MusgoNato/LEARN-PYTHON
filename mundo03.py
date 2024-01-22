@@ -261,25 +261,25 @@
 # print(f'Lista ordenada de forma decrescente {valores}')
 
 # 82 desafio (Ler valores, colocar na 2 lista so pares e lista 3 so impares)
-valores = []
-pares = valores[:] #Cópia
-impares = valores[:]
-i = 0
-while True:
-    valores.append(int(input('insira um valor : ')))
-    op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
-    while 'S' != op != 'N':
-        op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
-    if op == 'N':
-        break;
-    if valores[i] % 2 == 0:
-        pares.append(valores[i])
-    else:
-        impares.append(valores[i])
-    i += 1
-print(f'Lista completa : {valores}')
-print(f'Lista dos Pares : {pares}')
-print(f'Lista dos Ímpares : {impares}')
+# valores = []
+# pares = valores[:] #Cópia
+# impares = valores[:]
+# i = 0
+# while True:
+#     valores.append(int(input('insira um valor : ')))
+#     op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
+#     while 'S' != op != 'N':
+#         op = str(input('Quer continuar ? [S/N] ')).strip().upper()[0]
+#     if op == 'N':
+#         break;
+#     if valores[i] % 2 == 0:
+#         pares.append(valores[i])
+#     else:
+#         impares.append(valores[i])
+#     i += 1
+# print(f'Lista completa : {valores}')
+# print(f'Lista dos Pares : {pares}')
+# print(f'Lista dos Ímpares : {impares}')
 
 # 83° desafio (Ler uma expressao e verificar se ela fecha os parenteses corretamente)
 # # str = [] #expressao do usuario
