@@ -283,20 +283,20 @@
 
 # 83° desafio (Ler uma expressao e verificar se ela fecha os parenteses corretamente)
 #Tem que lembrar que o programa nao vai empilhar o ')', ele só empilha o parenteses de fechamento caso a expressão esta errada
-pilha = [] #Lista auxiliar pra armazenar os parenteses (A pilha já começa com 0 por causa que ela esta vazia)
-expressao = str(input('Insira a expressão : ')) #Expressão do usuário, que ao ser percorrido pelo for é uma lista praticamente
-print(len(pilha))
-for simbolo in expressao:  
-    if simbolo == '(': # '( )' PILHA - > ['('] -> tamanho é igual a 1
-        pilha.append('(') #Após ser inserido um caractere na pilha como o '(', o tamanho da piha passa a ser 1
-    elif simbolo == ')': 
-        if len(pilha) > 0: #Caso o caractere seja um ')', e a pilha nao esta vazia, é desempilhado o parenteses de abertura que esta contido na pilha
-            pilha.pop() #Retira o '(' da pilha e o tamanho passa a ser 0
-        else:
-            pilha.append(')') #Caso a pilha for menor ou igual a 0, significa que a expressão esta errada, é inserido o ')' para forçar o tamanho da pilha em 1 e na verificação mostrar errada a expressao, pois seu tamanho mudou
-            break;
-# Após todo o 'for', a pilha fica vazia de acordo com o ex "( )"
-if len(pilha) == 0: #A expressao só será valida caso o tamanho seja 0, pois ele desempilha a cada par encontrado
-    print('Expressão Matematica correta!')
-else:
-    print('Expressão matemática errada!')
+# pilha = [] #Lista auxiliar pra armazenar os parenteses (A pilha já começa com 0 por causa que ela esta vazia)
+# expressao = str(input('Insira a expressão : ')) #Expressão do usuário, que ao ser percorrido pelo for é uma lista praticamente
+# print(len(pilha))
+# for simbolo in expressao:  
+#     if simbolo == '(': # '( )' PILHA - > ['('] -> tamanho é igual a 1
+#         pilha.append('(') #Após ser inserido um caractere na pilha como o '(', o tamanho da piha passa a ser 1
+#     elif simbolo == ')': 
+#         if len(pilha) > 0: #Caso o caractere seja um ')', e a pilha nao esta vazia, é desempilhado o parenteses de abertura que esta contido na pilha
+#             pilha.pop() #Retira o '(' da pilha e o tamanho passa a ser 0
+#         else:
+#             pilha.append(')') #Caso a pilha for menor ou igual a 0, significa que a expressão esta errada, é inserido o ')' para forçar o tamanho da pilha em 1 e na verificação mostrar errada a expressao, pois seu tamanho mudou
+#             break;
+# # Após todo o 'for', a pilha fica vazia de acordo com o ex "( )"
+# if len(pilha) == 0: #A expressao só será valida caso o tamanho seja 0, pois ele desempilha a cada par encontrado
+#     print('Expressão Matematica correta!')
+# else:
+#     print('Expressão matemática errada!')
