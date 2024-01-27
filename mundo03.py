@@ -222,7 +222,7 @@
 # print(f'Você digitou os valores {lista}')
 # # print(f'Você digitou os valores {lista.sort()}') #Caso eu mande imprimir desse jeito, me retornara  NONE, isso ocorre devido a impressao, o retorno desse metodo é o NONE, porem ele modifica a lista e a ordena, mas para aparecer na tela tem que fazer isso antes
 
-# 80 desafio (Guardar 5 numeros em uma lista e já na posição correta, sem usar o sort, no final mostrar ela ordenada)
+# 80° desafio (Guardar 5 numeros em uma lista e já na posição correta, sem usar o sort, no final mostrar ela ordenada)
 # lista = []
 # i = 0
 # while i < 5:
@@ -242,7 +242,7 @@
 #     i += 1
 # print(f'Lista ordenada {lista}')
 
-# 81 desafio (Varios numeros digitados, mostrar quantos foram, a lista ordenada de forma decrescente, se o valor 5 esta ou nao na lista)
+# 81° desafio (Varios numeros digitados, mostrar quantos foram, a lista ordenada de forma decrescente, se o valor 5 esta ou nao na lista)
 # valores = []
 # contagem = 0
 # while True:
@@ -300,3 +300,54 @@
 #     print('Expressão Matematica correta!')
 # else:
 #     print('Expressão matemática errada!')
+
+#Referente a aula 17 Parte 2
+# teste = list()
+# dados = list()
+# # Aqui são adicionados na lista as informações
+# dados.append('Jõazin')
+# dados.append(13)
+# # Aqui são colocadas as informações da lista 'dados' dentro da lista 'teste'
+# # teste.append(dados) # É feita a ligação entre as duas listas, porem as duas listas receberão o mesmo valor e as mesmas alterações tambem
+# print(teste[0][1]) # Me mostra a idade pois dentro da lista a posição 1 é '13'
+# teste.append(dados[:]) # Faz-se uma cópia de todos os elementos de 'dados', para que não haja ligação nenhuma e eu possa mexer nos valores fazendo as devidadas alterações
+# dados.clear() # Esse método limpa toda a lista, porem como nao foi feita nenhuma ligação entre as listas, somente a cópia, o que esta em teste permanecerá intacto
+# print(teste, dados) 
+
+# galera = []
+# pessoas = []
+
+# for c in range(0, 4):
+#     pessoas.append(str(input('Insira seu nome: ')).strip())
+#     pessoas.append(int(input('Insira sua idade : ')))
+#     galera.append(pessoas[:]) # Faz-se uma cópia e joga todas as informações da lista pessoas em galera
+#     pessoas.clear() # Limpa os dados de pessoas a cada iteração
+# print(galera)
+# print(pessoas) # Caso imprima na tela será uma lista vazia. pois a cada iteração eu apago o que está em pessoas, porem como foi feita uma cópia dela a galera, o que esta em galera permanece, já que nao foi feita nenhuma ligação entre elas
+
+# 84° desafio (Nome e peso de várias pessoas, mostrar quantas pessoas foram cadastradas, listagem com as pessoas mais gordas e listagem com as pessoas mais leves)
+# # pessoas = []
+# # dados = []
+# # cont_pessoas = 0
+# # pessoa_gorda = pessoa_magra = 0
+# # nome_pessoa_gorda = nome_pessoa_magra = ''
+# # while True:
+# #     dados.append(str(input('Insira seu nome : ')).strip())
+# #     dados.append(int(input('Insira seu peso : ')))
+# #     pessoas.append(dados[:])
+# #     if pessoa_gorda < pessoas[cont_pessoas][1]: # Verificação para encontrar o maior peso e o respectivo nome
+# #         pessoa_gorda = pessoas[cont_pessoas][1]
+# #         nome_pessoa_gorda = pessoas[cont_pessoas][0]
+
+# #     if pessoa_magra > pessoas[cont_pessoas][1]: # Verificação para encontrar o menor peso e o respectivo nome
+# #         pessoa_magra = pessoas[cont_pessoas][1]
+# #         nome_pessoa_magra = pessoas[cont_pessoas][0]
+# #     dados.clear() # Dou o clear para ele nao ser uma lista ligada com nunhuma outra em que possa ocorrer isso, pois a cada incremento é deletado o ultimo valor
+# #     cont_pessoas += 1 # Quantidade de pessoas
+# #     op = str(input('Quer continuar ? [S/N]')).strip().upper()[0]
+# #     while 'S' != op != 'N':
+# #         op = str(input('Quer continuar ? [S/N]')).strip().upper()[0]
+# #     if op == 'N':
+# #         break;
+# # print(f'O maior peso foi de {pessoa_gorda}Kg. Pertence a {nome_pessoa_gorda} o maior peso!')
+# # print(f'O menor peso foi de {pessoa_magra}kg. Pertence a {nome_pessoa_magra} o menor peso!')
