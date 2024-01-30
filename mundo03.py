@@ -326,28 +326,58 @@
 # print(pessoas) # Caso imprima na tela será uma lista vazia. pois a cada iteração eu apago o que está em pessoas, porem como foi feita uma cópia dela a galera, o que esta em galera permanece, já que nao foi feita nenhuma ligação entre elas
 
 # 84° desafio (Nome e peso de várias pessoas, mostrar quantas pessoas foram cadastradas, listagem com as pessoas mais gordas e listagem com as pessoas mais leves)
-# # pessoas = []
-# # dados = []
-# # cont_pessoas = 0
-# # pessoa_gorda = pessoa_magra = 0
-# # nome_pessoa_gorda = nome_pessoa_magra = ''
-# # while True:
-# #     dados.append(str(input('Insira seu nome : ')).strip())
-# #     dados.append(int(input('Insira seu peso : ')))
-# #     pessoas.append(dados[:])
-# #     if pessoa_gorda < pessoas[cont_pessoas][1]: # Verificação para encontrar o maior peso e o respectivo nome
-# #         pessoa_gorda = pessoas[cont_pessoas][1]
-# #         nome_pessoa_gorda = pessoas[cont_pessoas][0]
+# pessoas = []
+# dados = []
+# cont_pessoas = 0
+# pessoa_gorda = pessoa_magra = 0
+# nome_pessoa_gorda = nome_pessoa_magra = ''
+# while True:
+#     dados.append(str(input('Insira seu nome : ')).strip())
+#     dados.append(int(input('Insira seu peso : ')))
+#     pessoas.append(dados)
+#     if pessoa_gorda < dados[1] or cont_pessoas == 0: # Verificação para encontrar o maior peso e o respectivo nome
+#         pessoa_gorda = dados[1]
+#         nome_pessoa_gorda = dados[0]
+#     if pessoa_magra > dados[1] or cont_pessoas == 0: # Verificação para encontrar o menor peso e o respectivo nome
+#         pessoa_magra = dados[1]
+#         nome_pessoa_magra = dados[0]
+#     dados.clear()
+#     cont_pessoas += 1 # Quantidade de pessoas
+#     op = str(input('Quer continuar ? [S/N]')).strip().upper()[0]
+#     while 'S' != op != 'N':
+#         op = str(input('Quer continuar ? [S/N]')).strip().upper()[0]
+#     if op == 'N':
+#         break;
+# print(f'Ao todo você cadastrou {cont_pessoas} pessoas!')
+# print(f'O maior peso foi de {pessoa_gorda}Kg. Pertence a {nome_pessoa_gorda} o maior peso!')
+# print(f'O menor peso foi de {pessoa_magra}kg. Pertence a {nome_pessoa_magra} o menor peso!')
 
-# #     if pessoa_magra > pessoas[cont_pessoas][1]: # Verificação para encontrar o menor peso e o respectivo nome
-# #         pessoa_magra = pessoas[cont_pessoas][1]
-# #         nome_pessoa_magra = pessoas[cont_pessoas][0]
-# #     dados.clear() # Dou o clear para ele nao ser uma lista ligada com nunhuma outra em que possa ocorrer isso, pois a cada incremento é deletado o ultimo valor
-# #     cont_pessoas += 1 # Quantidade de pessoas
-# #     op = str(input('Quer continuar ? [S/N]')).strip().upper()[0]
-# #     while 'S' != op != 'N':
-# #         op = str(input('Quer continuar ? [S/N]')).strip().upper()[0]
-# #     if op == 'N':
-# #         break;
-# # print(f'O maior peso foi de {pessoa_gorda}Kg. Pertence a {nome_pessoa_gorda} o maior peso!')
-# # print(f'O menor peso foi de {pessoa_magra}kg. Pertence a {nome_pessoa_magra} o menor peso!')
+# 85° desafio (Sete valores numéricos, cadastrar em uma unica lista, nela existem duas listas, uma de pares e outra de impares, colocar em ordem crescente no final)
+# lista_par = []
+# lista_impar = []
+# par = impar = 0
+# lista = [] # Lista principal
+# lista.append(lista_par)
+# lista.append(lista_impar)
+# print(lista)
+# for i in range(0, 6):
+#     num = int(input(f'Insira o {i + 1}° numero : '))
+#     if num % 2 == 0:
+#         lista_par.append(num)
+#     else:
+#         lista_impar.append(num)
+# lista_par.sort()
+# lista_impar.sort()
+# print(f'Lista de pares : {lista[0]}')
+# print(f'Lista de ímpares : {lista[1]}')
+
+# 86° desafio (Criar matriz de dimensao 3X3 e preencha os valores lidos do teclado, depois mostrar a matriz na formatação correta)
+# # lista = [] #Não consegui entender a lógica
+# # for i in range(0, 3):
+# #     for j in range(0, 3):
+# #         lista.append(int(input(f'Digite um valor para {i, j} : ')))
+
+# # for i in range(0, 3):
+# #     for j in range(0, 3):
+# #         print(lista[i * 3 + j], end=' ')
+# #     print('\n', end='')
