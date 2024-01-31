@@ -372,12 +372,66 @@
 # print(f'Lista de ímpares : {lista[1]}')
 
 # 86° desafio (Criar matriz de dimensao 3X3 e preencha os valores lidos do teclado, depois mostrar a matriz na formatação correta)
-# # lista = [] #Não consegui entender a lógica
-# # for i in range(0, 3):
-# #     for j in range(0, 3):
-# #         lista.append(int(input(f'Digite um valor para {i, j} : ')))
+# lista = []
+# for i in range(0, 3):
+#     for j in range(0, 3):
+#         lista.append(int(input(f'Digite um valor para [{i, j}] : ')))
 
-# # for i in range(0, 3):
-# #     for j in range(0, 3):
-# #         print(lista[i * 3 + j], end=' ')
-# #     print('\n', end='')
+# # Lembrando que vai de 0 a 8, a fórmula nos colchetes é pra mapear os indices i e j para o valor correto, é uma maneira simplificada disso : lista[i][j]
+# for i in range(0, 3):
+#     for j in range(0, 3):
+#         print(f'{lista[i * 3 + j]}', end=' ')
+#     print('\n', end='')
+
+# Outro maneira de fazer
+# lista = []
+# for i in range(0, 3):
+#     lin = []
+#     for j in range(0, 3):
+#         num = int(input(f'Insira um valor {[i, j]} : '))
+#         lin.append(num) # A lista de linhas vai dando um append ate chegar no final, que posteriormente essa lista vai ser apagada, mas os valores vao ser armazenados em lista 
+#     lista.append(lin) # A lista lin que contem os valores lidos é colocada na lista de nome 'lista', assim tenho uma lista dentro de outra lista, por consequencia, cada mini lista são as linhas da matriz
+# for cont_sublista in lista:
+#     print(cont_sublista) # Ele vai imprimir cada parte de lin, ou seja cada lista dela colocada em lista, como o \n ja é incluso no print, nao é necessário fazer do jeito anterior apagando espaço vazio
+
+# 87° desafio (Mostrar a soma de todos os valores pares digitados, soma dos valores da 3 coluna e o maior valor da segunda linha)
+# lista = []
+# soma = soma_col_3 = soma_lin_2 = 0
+# for i in range(0, 3):
+#     lin = []
+#     for j in range(0, 3):
+#         num = int(input(f'Insira um valor {[i, j]} : '))
+#         if num % 2 == 0:
+#             soma += num
+#         if j == 2:
+#             soma_col_3 += num
+#         if i == 1:
+#             soma_lin_2 += num
+#         lin.append(num)
+#     lista.append(lin)
+# for cont_sublista in lista:
+#     print(cont_sublista)
+# print(f'A soma dos valores pares : {soma}')
+# print(f'A soma dos valores da 3 coluna é : {soma_col_3}')
+# print(f'A soma dos valores da 2 linha é : {soma_lin_2}')
+
+# 88° desafio (Jogo da megasena, programa pergunta quantos jogos serao gerados e vai sortear 6 numeros entre 1 e 60 para cada jogo cadastrando em uma lista composta)
+# from random import randint
+# from time import sleep
+# i = 0
+# str = 'MEGA SENA'
+# lista = []
+# num = int(input('Quantos jogos serao gerados? ')) # numero de jogos
+# while i < num:
+#     jogo = []
+#     for j in range(0, 6):
+#         num_gerado = randint(1, 60)
+#         jogo.append(num_gerado)
+#     lista.append(jogo) # É atribuido a 'lista', lista 'jogo', onde é gerado o 1° jogo
+#     i += 1
+# print(f'{str:^30}') # Centralizando a string
+# for c, cont_sublistas in enumerate(lista):
+#     print(f'{c + 1}° Jogo : {cont_sublistas}')
+#     sleep(1)
+
+# 89° desafio (Nome e duas notas guardadas em listas, mostrar o boletim da media de cada um, permitir o usuario mostrar as notas de cada aluno individualmente)
