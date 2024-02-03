@@ -435,3 +435,46 @@
 #     sleep(1)
 
 # 89° desafio (Nome e duas notas guardadas em listas, mostrar o boletim da media de cada um, permitir o usuario mostrar as notas de cada aluno individualmente)
+# [[nome, [nota1, nota2]], [nome2, [nota1, nota2]]] -> ideia principal
+# from time import sleep
+# lista = []
+# media = 0
+# i = 0
+# while True:
+#     # Preciso esvaziar as listas pois a cada iteração, elas nao devem guardar o valor passado, pois o append coloca no final da lista o valor passado, guardando o que foi colocado antes, informações como notas ou nomes dos alunos serao colocados apenas em uma lista e nao separados individualmente em sublistas
+#     alunos = []
+#     notas = []
+#     alunos.append(str(input('Insira o nome : ')).strip())
+#     notas.append(int(input('Insira nota 1 : ')))
+#     notas.append(int(input('Insira nota 2 : ')))
+#     alunos.append(notas)
+#     # Faço a media, nesse caso como sao apenas 2 notas o jeito mais facil que encontrei foi esse, em caso de muitas notas ja seria necessario um loop
+#     media = (notas[0] + notas[1])/2
+#     alunos.append(media)
+#     lista.append(alunos)
+#     op = str(input('Deseja continuar: ')).strip().upper()[0]
+#     while 'S' != op != 'N':
+#         op = str(input('Deseja continuar: ')).strip().upper()[0]
+#     if op == 'N':
+#         break;
+
+# #               0
+# # [[nome, [nota1, nota2], media]]
+# #   0           1           2
+
+
+# # Considerando apenas o 1 nome, pois o nome completo a identação não sairá correta
+# print('N     Nomes      Média')
+# for cont_sublista, alunos in enumerate(lista):
+#     print(f'{cont_sublista:<}{lista[cont_sublista][0]:^13}{lista[cont_sublista][2]:>6}') # Formatado na mão mesmo
+
+# while True:
+#     option = int(input('Insira qual nota gostaria de ver (999 interrompe) : '))
+#     while option < 0 or option >= len(lista) and option != 999: # Verificação para erros do usuário
+#         option = int(input('Insira qual nota gostaria de ver (999 interrompe) : '))
+#     if option == 999:
+#         break;
+#     print(f'Notas de aluno {lista[option][0]} são : {lista[option][1]}')
+# print('FINALIZANDO....') 
+# sleep(1)
+# print('VOLTE SEMPRE!')
