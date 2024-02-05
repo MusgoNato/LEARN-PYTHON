@@ -333,14 +333,14 @@
 # nome_pessoa_gorda = nome_pessoa_magra = ''
 # while True:
 #     dados.append(str(input('Insira seu nome : ')).strip())
-#     dados.append(int(input('Insira seu peso : ')))
-#     pessoas.append(dados)
-#     if pessoa_gorda < dados[1] or cont_pessoas == 0: # Verificação para encontrar o maior peso e o respectivo nome
+#     dados.append(float(input('Insira seu peso : ')))
+#     if pessoa_gorda < dados[1] or cont_pessoas == 0: # Verificação   para encontrar o maior peso e o respectivo nome
 #         pessoa_gorda = dados[1]
 #         nome_pessoa_gorda = dados[0]
 #     if pessoa_magra > dados[1] or cont_pessoas == 0: # Verificação para encontrar o menor peso e o respectivo nome
 #         pessoa_magra = dados[1]
 #         nome_pessoa_magra = dados[0]
+#     pessoas.append(dados[:]) # Fazendo isso eu estou criando uma ligação entre as listas, deveria ser pessoas.append(dados[:])
 #     dados.clear()
 #     cont_pessoas += 1 # Quantidade de pessoas
 #     op = str(input('Quer continuar ? [S/N]')).strip().upper()[0]
@@ -348,9 +348,19 @@
 #         op = str(input('Quer continuar ? [S/N]')).strip().upper()[0]
 #     if op == 'N':
 #         break;
+# # Ao invés de um contador de pessoas, de forma simples se coloca o tamanho da lista principal
+# # print(f'Ao todo você cadastrou {len(pessoas)} pessoas!')
 # print(f'Ao todo você cadastrou {cont_pessoas} pessoas!')
-# print(f'O maior peso foi de {pessoa_gorda}Kg. Pertence a {nome_pessoa_gorda} o maior peso!')
-# print(f'O menor peso foi de {pessoa_magra}kg. Pertence a {nome_pessoa_magra} o menor peso!')
+# print(f'O maior peso foi de {pessoa_gorda}Kg.', end=' ')
+# print(f'Pertence o maior peso a {nome_pessoa_gorda}',end='')
+# for p in pessoas:
+#     if p[1] == pessoa_gorda:
+#         print(f'{p[0]}', end=' ')
+# print(f'\nO menor peso foi de {pessoa_magra}kg.', end=' ') 
+# print(f'Pertence a {nome_pessoa_magra} o menor peso!',end=' ')
+# for p in pessoas:
+#     if p[1] == pessoa_magra:
+#         print(f'{p[0]}', end=' ') # Esse trecho já mostra uma lista ao inves de 1 variavel só
 
 # 85° desafio (Sete valores numéricos, cadastrar em uma unica lista, nela existem duas listas, uma de pares e outra de impares, colocar em ordem crescente no final)
 # lista_par = []
@@ -359,7 +369,6 @@
 # lista = [] # Lista principal
 # lista.append(lista_par)
 # lista.append(lista_impar)
-# print(lista)
 # for i in range(0, 6):
 #     num = int(input(f'Insira o {i + 1}° numero : '))
 #     if num % 2 == 0:
@@ -370,6 +379,22 @@
 # lista_impar.sort()
 # print(f'Lista de pares : {lista[0]}')
 # print(f'Lista de ímpares : {lista[1]}')
+
+# Esse é o jeito certo do desafio
+# lista = [[], []]
+# valor = 0
+# # Faz a junção do que é par ou impar nas sublistas dentro da lista principal
+# for i in range(1, 8):
+#     valor = int(input(f'Insira o {i} numero : '))
+#     if valor % 2 == 0:
+#         lista[0].append(valor)
+#     else:
+#         lista[1].append(valor)
+# # Ordena os valores
+# lista[0].sort()
+# lista[1].sort()
+# print(f'Valores pares são : {lista[0]}')
+# print(f'Valores ímpares são : {lista[1]}')
 
 # 86° desafio (Criar matriz de dimensao 3X3 e preencha os valores lidos do teclado, depois mostrar a matriz na formatação correta)
 # lista = []
@@ -394,8 +419,19 @@
 # for cont_sublista in lista:
 #     print(cont_sublista) # Ele vai imprimir cada parte de lin, ou seja cada lista dela colocada em lista, como o \n ja é incluso no print, nao é necessário fazer do jeito anterior apagando espaço vazio
 
+# Mais um jeito de fazer, de acordo com o curso em video
+# matriz = [[0,0,0], [0,0,0], [0,0,0]]
+# for l in range(0,3):
+#     for c in range(0,3):
+#         matriz[l][c] = int(input(f'Digite um valor para {[l,c]} : '))
+# for l in range(0,3):
+#     for c in range(0,3):
+#         print(f'[{matriz[l][c]:^5}]', end=' ') # Isso ele vai centralizar caso o usuario digite numeros com muitos digitos
+#     print()
+
 # 87° desafio (Mostrar a soma de todos os valores pares digitados, soma dos valores da 3 coluna e o maior valor da segunda linha)
 # lista = []
+# # [[1,2,3], [4,5,6], [7,8,9]]
 # soma = soma_col_3 = soma_lin_2 = 0
 # for i in range(0, 3):
 #     lin = []
@@ -407,8 +443,8 @@
 #             soma_col_3 += num
 #         if i == 1:
 #             soma_lin_2 += num
-#         lin.append(num)
-#     lista.append(lin)
+#         lin.append(num) # Cada numero é adicionado em lin, que servirá posteriormente para imprimir a matriz de um jeito mais fácil
+#     lista.append(lin) # A cada iteração os 3 elementos de lin que é uma lista é adicionado na lista principal
 # for cont_sublista in lista:
 #     print(cont_sublista)
 # print(f'A soma dos valores pares : {soma}')
@@ -433,6 +469,7 @@
 # for c, cont_sublistas in enumerate(lista):
 #     print(f'{c + 1}° Jogo : {cont_sublistas}')
 #     sleep(1)
+# print('BOA SORTE')
 
 # 89° desafio (Nome e duas notas guardadas em listas, mostrar o boletim da media de cada um, permitir o usuario mostrar as notas de cada aluno individualmente)
 # [[nome, [nota1, nota2]], [nome2, [nota1, nota2]]] -> ideia principal
@@ -464,9 +501,10 @@
 
 
 # # Considerando apenas o 1 nome, pois o nome completo a identação não sairá correta
-# print('N     Nomes      Média')
+# #print('N     Nomes      Média')
+# print(f'{"No.":<4}{"Nome":^13}{"Média":>6}') # Dá pra fazer desse jeito tambem, mais facil e pratico
 # for cont_sublista, alunos in enumerate(lista):
-#     print(f'{cont_sublista:<}{lista[cont_sublista][0]:^13}{lista[cont_sublista][2]:>6}') # Formatado na mão mesmo
+#     print(f'{cont_sublista:<4}{lista[cont_sublista][0]:^13}{lista[cont_sublista][2]:>6}') # Formatado na mão mesmo
 
 # while True:
 #     option = int(input('Insira qual nota gostaria de ver (999 interrompe) : '))
