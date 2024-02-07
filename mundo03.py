@@ -516,3 +516,107 @@
 # print('FINALIZANDO....') 
 # sleep(1)
 # print('VOLTE SEMPRE!')
+
+#Referente a aula 19
+# No caso dos dicionario adcao de elemnetos o append nao funciona
+# Pode-se criar um novo elemento assim: dados['sexo'] = 'M', cria o indice 'sexo' e é adicionado dentro dele o 'M'
+# Para remoção de elementos usa-se o comando del
+# del dados['idade'] # Simplifica a estrutura e é apagada do dicionario idade
+# filme {'titulo': 'Star Wars', 'ano': '1977', 'diretor': 'George Lucas'   
+#        } # O python chama os elementos de chaves ou keys, a qualquer momento posso acessar os itens, chaves ou simplismente os valores
+# print(filme.values()) # Ele só pega o que esta dentro das chaves
+# print(filme.keys()) # Ele pega somente os itens dentro das chaves 
+# print(filme.items()) # Ele pega os dois, tanto as keys (chaves) quanto os itens dentro dessas keys
+# 'titulo': 'Star Wars' -> items
+#    key        valor
+# Laços pode-se utilizar esses conceitos
+# for keys, valuses in filme.items():
+#       print(f'O {k} é {v}') # ele pega a chave e le o valor dentro dela, de acordo com o for (que é tipo um enumerate)
+
+# Listas e dicionarios podem se juntar
+# filmes = {'titulo': 'Star Wars', 'ano': '1977', 'diretor': 'George Lucas'}
+# locadora = [filmes] # Junta-se o dicionário filmes na lista locadora
+# pessoas = {'nome': 'Gustavo', 'sexo': 'M', 'idade': 22}
+# print(f'{pessoas["nome"] tem {pessoas["idade"]} anos}') # Quando vai referenciar um valor por meio da chave dentro dos colchetes, eles tem que estar em aspas duplas e nao simples
+# for k in pessoas.keys(): # Para cada chave mostre ela
+#   print(k)
+# for k in pessoas.values(): # Para cada chave mostre o valor dentro dela
+#   print(k)
+# for k,v in pessoas.items(): # Para cada chave e valor, mostre os dois, esse for e tipo o enumerate
+#   print(f'{k} = {v}')
+#del pessoas(['sexo']) # o elemento sexo é apagado do dicionario
+# pessoas['nome'] = 'leandro' # A chave nome se torna Leandro
+# pessoas['peso'] = 98.5 # ele adciona a chave peso no dicionario pessoas
+
+# brasil = []
+# estado1 = {'uf': 'Rio de Janeiro', 'sigla': 'RJ'}
+# estado2 = {'uf': 'São Paulo', 'sigla': 'SP'}
+# brasil.append(estado1)
+# brasil.append(estado2) # Nos append é colocado os dois dicionarios na lista, a lista é com INDICES e nao com CHAVES como o dicionario funciona
+# print(brasil[0]) # É mostrado o dicionario estado1
+# print(brasil[0]['sigla']) # É mostrado o valor da chave na posicao 0, que é RJ
+# estado = dict()
+# brasil = []
+# for c in range(0,3):
+#   estado['uf'] = str(input('Unidade Federativa : '))
+#   estado['sigla'] = str(input('Sigla do Estado : '))
+#   brasil.append(estado) # Nessa linha da errado pq como as listas, deve-se fazer uma copia
+#   brasil.append(estado.copy()) # Um método adicional de estado que permite fazer uma cópia
+# for estado in brasi: # Vai de chave em chave mostrando cada dicionario
+#   print(estado) # Ele vai mostrar cada dicionario dentro da lista, o dicionario inteiro
+#   for keys, valor in estado.items(): # Aqui quando o 1 dicionario esta no for de fora, ele entra nesse for e mostra sua chave e seu valor
+#       print(f'O campo {keys} tem valor {valor}') # Pra cada elemento ele mostra a chave e o valor de dentro da chave
+# Outro jeito de fazer o mesmo é desse jeito
+# for estado in brasil: # percorre os dicionarios
+#   for valor in estado.values(): # O estado.values vai mostrar cada valor somente
+#       print(valor, end = ' ')
+#   print()
+
+# desafio 90 (Ler nome e media de um aluno, guardando a situação desse aluno, se for 7 aprovado, abaixo reprovado, guardar tudo em 1 dicionario e mostrar o dicionario no final)
+# aluno = {}
+# aluno['nome'] = str(input('Insira seu nome : '))
+# aluno['Média'] = float(input('Insira sua nota : '))
+# print(f'Nome é igual a {aluno['nome']}')
+# print(f'Média é igual a {aluno['Média']}')
+# if aluno['Média'] >= 7:
+#     print(f'Situação é igual a Aprovado!')
+# else:
+#     print(f'Situação é igual a Reprovado!')
+
+# desafio 91 (4 jogadores jogam um dado aleatorio depois mostrar eles em ordem, quem foi o 1 ao ultimo ganhador)
+# from random import randint
+# jogadores = {}
+# maior = menor = 0
+# jogadores['jogador1'] = randint(0, 6)
+# jogadores['jogador2'] = randint(0, 6)
+# jogadores['jogador3'] = randint(0, 6)
+# jogadores['jogador4'] = randint(0, 6)
+# for keys, chaves in jogadores.items():
+#     print(f'O {keys} tirou {chaves}')
+# print('Rankig dos Ganhadores!')
+# # Nesse for o sorted organiza todos os valores dentro de jogadores, o key= jogadores.get vai pegar cada valor das chaves, reverse serve pra inverter a ordem, no caso do > pro <
+# # O i serve como contador normal, por isso usei o enumerate, o sorted ele de retorno me devolve uma lista e nao um dicionario, entao o dicionario inicial ainda permanece com as mesmas informações iniciais
+# # Ao criar uma lista a parte, posso comparar os valores que foram ordenados e gerados pelo sorted, assim como jogador é cada chave no for, para pegar cada valor e mostrar no final que é > e <
+# # Usei o proprio dicionario e dentro dele como jogador era a chave, coloquei-o entre colchetes, assim me retornou a cada iteração o valor correto de cada jogador ja e ordem
+# for i, jogador in enumerate(sorted(jogadores, key= jogadores.get, reverse=True)):
+#     print(f'{i + 1}o ganhador é {jogador} com {jogadores[jogador]}')
+
+# desafio 92 (Ler nome, ano de nascimento e carteira de trabalho, cadastrar em um dicionario caso a ctps for != de 0, o dicionario vai receber o ano de contratação e o salário, Calcular e acrescentar com quantos anos a pessoa vai se aposentar)
+from datetime import date
+pessoa = {}
+pessoa['nome'] = str(input('insira seu nome : ')).strip()
+pessoa['idade'] = int(input('Insira o ano de nascimento : '))
+pessoa['CTPS'] = int(input('Insira sua CTPS (Caso nao tiver insira 0) : '))
+idade = date.today().year - pessoa['idade'] # Cáculo da idade da pessoa
+pessoa['idade'] = idade # Atribui a chave o valor da idade real da pessoa
+if pessoa['CTPS'] == 0: # Caso a pessoa nao tenha nenhum ano de contribuição é feita a verificação
+    for key, value in pessoa.items():
+        print(f'{key} tem o valor : {value} ')
+else:
+    # Lembrando que para se aposentar nesse desafio o minimo e 35 anos
+    pessoa['Contrato'] = int(input('Ano de contratação : '))
+    pessoa['Salário'] = float(input('Salário : ')).conjugate() # Me retorna a forma basica de um numeero float 
+    # tem que calcular a aposentadoria, a idade que ele começou a pagar e depois decremnetar com a idade dele,
+    # assim eu vou ter o tempo de contribuição, dai subtraio com o tempo minimo que e 35 anos, o que sobrar é o tempo que falta, ou seja soma 
+    # com a idade dele
+    aposentar = pessoa['idade'] - 35 
