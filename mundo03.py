@@ -602,21 +602,88 @@
 #     print(f'{i + 1}o ganhador é {jogador} com {jogadores[jogador]}')
 
 # desafio 92 (Ler nome, ano de nascimento e carteira de trabalho, cadastrar em um dicionario caso a ctps for != de 0, o dicionario vai receber o ano de contratação e o salário, Calcular e acrescentar com quantos anos a pessoa vai se aposentar)
-from datetime import date
-pessoa = {}
-pessoa['nome'] = str(input('insira seu nome : ')).strip()
-pessoa['idade'] = int(input('Insira o ano de nascimento : '))
-pessoa['CTPS'] = int(input('Insira sua CTPS (Caso nao tiver insira 0) : '))
-idade = date.today().year - pessoa['idade'] # Cáculo da idade da pessoa
-pessoa['idade'] = idade # Atribui a chave o valor da idade real da pessoa
-if pessoa['CTPS'] == 0: # Caso a pessoa nao tenha nenhum ano de contribuição é feita a verificação
-    for key, value in pessoa.items():
-        print(f'{key} tem o valor : {value} ')
-else:
-    # Lembrando que para se aposentar nesse desafio o minimo e 35 anos
-    pessoa['Contrato'] = int(input('Ano de contratação : '))
-    pessoa['Salário'] = float(input('Salário : ')).conjugate() # Me retorna a forma basica de um numeero float 
-    # tem que calcular a aposentadoria, a idade que ele começou a pagar e depois decremnetar com a idade dele,
-    # assim eu vou ter o tempo de contribuição, dai subtraio com o tempo minimo que e 35 anos, o que sobrar é o tempo que falta, ou seja soma 
-    # com a idade dele
-    aposentar = pessoa['idade'] - 35 
+# from datetime import date
+# pessoa = {}
+# pessoa['nome'] = str(input('insira seu nome : ')).strip()
+# pessoa['idade'] = int(input('Insira o ano de nascimento : '))
+# aux = pessoa['idade'] # variavel auxiliar para receber o ano de nascimento inicial para posteriormente utilizar esse valor no cálculo dos anos de contribuição
+# pessoa['CTPS'] = int(input('Insira sua CTPS (Caso nao tiver insira 0) : '))
+# idade = date.today().year - pessoa['idade'] # Cáculo da idade da pessoa
+# pessoa['idade'] = idade # Atribui a chave o valor da idade real da pessoa
+# if pessoa['CTPS'] <= 0 or pessoa['idade'] <= 17: # Caso a pessoa nao tenha nenhum ano de contribuição é feita a verificação
+#     for key, value in pessoa.items():
+#         print(f'{key} tem o valor : {value} ')
+# else:
+#     # Lembrando que para se aposentar nesse desafio o minimo e 35 anos
+#     pessoa['Contrato'] = int(input('Ano de contratação : '))
+#     pessoa['Salário'] = float(input('Salário : R$')).conjugate() # Me retorna a forma basica de um numeero float 
+#     # SUBTRAIR ANO DE NASCIMENTO DA PESSOA COM O ANO DE CONTRATAÇÃO QUE ELA TEVE,
+#     # ASSIM OBTENHO A IDADE INICIAL DE TRABALHO E SOMO COM OS ANOS MINIMOS DE CONTRIBUIÇÃO QUE É 35
+#     aposentar = (pessoa['Contrato'] - aux) + 35 # Cálculo para saber o tempo que resta de contribuição
+#     pessoa['aposentadoria'] = aposentar
+#     for keys, valor in pessoa.items():
+#         print(f'{keys} tem valor {valor}')
+    
+# desafio 93 (Criar um programa para ler um jogador e quantas partidas ele fez, depois ler a quantidade de gols e colocar uma lista, guardar tudo num dicionario)
+# players = {}
+# players['jogador'] = str(input('Insira o nome do jogador : ')).strip()
+# players['partidas'] = int(input('Insira quantas partidas o jogador fez: '))
+# lista = []
+# soma = 0
+# for i in range(0, players['partidas']):
+#     aux = int(input(f'Quantos gols ele fez na {i} partida : '))
+#     soma += aux
+#     lista.append(aux)
+# players['Gols marcados'] = lista
+# players['Soma de todos os gols nas partidas'] = soma
+
+# print(20*'=')
+# for chaves, valor in players.items():
+#     print(f'{chaves} tem valor {valor}')
+
+# print(20*'=')
+# print(f'O jogador {players['jogador']} jogou {players['partidas']} partidas')
+# for i in range(players['partidas']):
+#     print(f'-> Na partida {i}, fez {lista[i]} gols.') 
+# print(f'Foi um total de {players['Soma de todos os gols nas partidas']} gols.')
+
+# desafio 94 (Criar um programa pra leitura de varias pessoas, perguntando o nome, sexo e idade, os dados devem ser guardados em um dicionario separado para cada pessoa
+# No final mostrar quantas pessoas foram cadastradas, a média de idade de todos, uma lista com todas as mulheres e uma lista com todas as pessoas com idade acima da média)
+# pessoas = dict()
+# cadastros = [] # Lista com os dicionarios de cada usuario
+# mulheres = [] # Lista pra guardar as mulheres cadastradas
+# maior = 0
+# contem_nomes = []
+# media_idade = 0 # variavel para fazer a soma e media da idade do grupo das pessoas
+# while True:
+#     pessoas['Nome'] = str(input('Insira seu nome : ')).strip()
+#     pessoas['idade'] = int(input('Insira sua idade : '))
+#     media_idade += pessoas['idade']
+#     if maior < pessoas['idade'] and pessoas['idade'] > 30: # Estabeleci uma idade para > que ela as pessoas serem acima da media
+#         maior = pessoas['idade']
+#         contem_nomes.append(pessoas['Nome'])
+#     pessoas['Sexo'] = str(input('Insira o sexo [M/F] : ')).strip().upper()[0]
+#     while 'M' != pessoas['Sexo'] != 'F':
+#         pessoas['Sexo'] = str(input('Insira o sexo [M/F] : ')).strip().upper()[0]
+#     if pessoas['Sexo'] == 'F':
+#         mulheres.append(pessoas['Nome'])
+#     cadastros.append(pessoas.copy())
+#     op = str(input('Quer continuar [S/N]: ')).strip().upper()[0]
+#     while 'S' != op != 'N':
+#         op = str(input('Quer continuar [S/N]: ')).strip().upper()[0]
+#     if op == 'N':
+#         break;
+# print(f'O grupo tem {len(cadastros)} pessoas')
+# print(f'O grupo tem uma media de {media_idade/len(cadastros)} anos!')
+# print(f'As mulheres cadastradas foram', end=' ')
+# for lista, valor in enumerate(mulheres):
+#     print(valor, end=' ')
+# print() # Pula linha
+# print('Pessoas acima da média : ')
+# for i in range(len(contem_nomes)): 
+#     if contem_nomes[i] == cadastros[i]['Nome']: # O que acontece aqui é que a cada iteração, o que esta na lista de nomes de pessoas acima da 
+#         print(cadastros[i])                     # media verifica antes, é comparada com o dicionario de cadastros de pessoas, onde em cada 
+#                                                 # iteração ate o tamanho de cadastro ele pega somente o valor que esta em nome['pessoa'] para fazer a comparação
+            
+# desafio 94 ()
+
