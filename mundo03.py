@@ -685,5 +685,42 @@
 #         print(cadastros[i])                     # media verifica antes, é comparada com o dicionario de cadastros de pessoas, onde em cada 
 #                                                 # iteração ate o tamanho de cadastro ele pega somente o valor que esta em nome['pessoa'] para fazer a comparação
             
-# desafio 94 ()
-
+# desafio 95 (Aprimorar o desafio 93, pode ser quantas pessoas o usuario quiser, mostrar tipo uma tabela de seleção, para que o usuario escolha e o programa mostre o aproveitmento do jogador)
+# players = {}
+# cadastros = [] # Conterá os cadastros dos players de um dicinário
+# while True:
+#     lista = [] # Lista para armazenar os gols marcados por jogador individualmente, vazia a cada iteração para nao prejudicar o proximo elemento lido
+#     soma = 0
+#     players['jogador'] = str(input('Insira o nome do jogador : ')).strip()
+#     players['partidas'] = int(input('Insira quantas partidas o jogador fez: '))
+#     for i in range(0, players['partidas']):
+#         aux = int(input(f'Quantos gols ele fez na {i} partida : '))
+#         soma += aux
+#         lista.append(aux)
+#     players['Gols marcados'] = lista
+#     players['Soma de todos os gols nas partidas'] = soma
+#     cadastros.append(players.copy())
+#     op = str(input('Quer continuar [S/N] :  ')).strip().upper()[0]
+#     while 'S' != op != 'N':
+#         op = str(input('Quer continuar [S/N] :  ')).strip().upper()[0]
+#     if op == 'N':
+#         break;
+# print(20*'=')
+# print(f'{"COD":<8}{"Nome":<15}{"GOLS":^15}{"TOTAL":>15}')
+# for i in range(len(cadastros)): # Nesse for, para fazer a centralização de uma lista é necessario colocar a lista sobre outras chaves e assim colocar a formatação para centralizar a lista como um todo
+#     print(f'{i:<8}{cadastros[i]['jogador']:<15}{f'{cadastros[i]['Gols marcados']}':^15}{cadastros[i]['Soma de todos os gols nas partidas']:>15}')
+# print(20*'=')
+# while True:
+#     opção = int(input('Mostrar dados de qual jogador : '))
+#     if opção == 999:
+#         break;
+#     if opção >= len(cadastros):
+#         print(f'ERRO! Não existe jogador com código {opção}! Tente novamente')
+#     else:
+#         # Pensei na lógica de pegar uma variavel e guardar a lista da opção de jogador que o usuario escolheu e o nome tambem, depois de acordo com o tamanho dela, imprimo-a na tela
+#         aux = cadastros[opção]['Gols marcados']
+#         nome = cadastros[opção]['jogador']
+#         print(f'LEVANTAMENTO DO {nome}')
+#         for i in range(len(aux)):
+#             print(f'-> Na partida {i}, fez {aux[i]} gols.')
+# print('VOLTE SEMPRE! :)')
