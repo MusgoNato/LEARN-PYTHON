@@ -572,7 +572,7 @@
 #       print(valor, end = ' ')
 #   print()
 
-# desafio 90 (Ler nome e media de um aluno, guardando a situação desse aluno, se for 7 aprovado, abaixo reprovado, guardar tudo em 1 dicionario e mostrar o dicionario no final)
+# desafio 90º (Ler nome e media de um aluno, guardando a situação desse aluno, se for 7 aprovado, abaixo reprovado, guardar tudo em 1 dicionario e mostrar o dicionario no final)
 # aluno = {}
 # aluno['nome'] = str(input('Insira seu nome : '))
 # aluno['Média'] = float(input('Insira sua nota : '))
@@ -580,11 +580,14 @@
 # print(f'Média é igual a {aluno['Média']}')
 # if aluno['Média'] >= 7:
 #     print(f'Situação é igual a Aprovado!')
-# else:
+# elif aluno['Média'] == 6:
+#     print(f'Situação é igual a Recuperação!') # Faltou essa verificação para 'Recuperação'
+# elif aluno['Média'] <= 5:
 #     print(f'Situação é igual a Reprovado!')
 
-# desafio 91 (4 jogadores jogam um dado aleatorio depois mostrar eles em ordem, quem foi o 1 ao ultimo ganhador)
+# desafio 91º (4 jogadores jogam um dado aleatorio depois mostrar eles em ordem, quem foi o 1 ao ultimo ganhador)
 # from random import randint
+# from operator import itemgetter # Este operdador ele vai pegar a parte que eu quero no parametro 'key=', e as ordena, caso for a parte 0, todas as chaves sao ordenadas, se for 1, todas os valores 
 # jogadores = {}
 # maior = menor = 0
 # jogadores['jogador1'] = randint(0, 6)
@@ -601,14 +604,28 @@
 # for i, jogador in enumerate(sorted(jogadores, key= jogadores.get, reverse=True)):
 #     print(f'{i + 1}o ganhador é {jogador} com {jogadores[jogador]}')
 
-# desafio 92 (Ler nome, ano de nascimento e carteira de trabalho, cadastrar em um dicionario caso a ctps for != de 0, o dicionario vai receber o ano de contratação e o salário, Calcular e acrescentar com quantos anos a pessoa vai se aposentar)
+# # Outro jeito de fazer
+# aux = []
+# aux = sorted(jogadores.items(), key = itemgetter(1), reverse = True) # É ordenado o dicionario e colocado em subtuplas dentro de uma lista, 
+#                                                                     # o key como mencionado anteriormente pega cada parte do dicionario, 
+#                                                                     # nesse caso quero ordenar so os valores da parte 1,
+#                                                                     # reverse é para inverter a ordem, para que seja do maior ao menor
+# for indice, valor in enumerate(aux):
+#     print(f'{indice + 1}º lugar: {valor[0]} com {valor[1]}') # O valor da posicao 0 pega so as chaves da tupla dentro da lista aux, 
+#                                                             # pois ela foi convertida pelo sorted anteriormente, o valor em 0 pega as chaves, o 1 pega os valores
+
+
+
+# desafio 92º (Ler nome, ano de nascimento e carteira de trabalho, cadastrar em um dicionario caso a ctps for != de 0, o dicionario vai receber o ano de contratação e o salário, Calcular e acrescentar com quantos anos a pessoa vai se aposentar)
 # from datetime import date
+# # from datetime import datetime
 # pessoa = {}
 # pessoa['nome'] = str(input('insira seu nome : ')).strip()
 # pessoa['idade'] = int(input('Insira o ano de nascimento : '))
-# aux = pessoa['idade'] # variavel auxiliar para receber o ano de nascimento inicial para posteriormente utilizar esse valor no cálculo dos anos de contribuição
+# aux = pessoa['idade'] # variavel auxiliar para receber o ano de nascimento inicial para posteriormente utilizar esse valor no cálculo dos anos de contribuição (idade que a pessoa vai se aposentar)
 # pessoa['CTPS'] = int(input('Insira sua CTPS (Caso nao tiver insira 0) : '))
 # idade = date.today().year - pessoa['idade'] # Cáculo da idade da pessoa
+# # pessoa['idade'] = datetime.now().year - pessoa['idade'] # Faz o mesmo que a linha anterior, anotei por ser um jeito diferente da minha resolução
 # pessoa['idade'] = idade # Atribui a chave o valor da idade real da pessoa
 # if pessoa['CTPS'] <= 0 or pessoa['idade'] <= 17: # Caso a pessoa nao tenha nenhum ano de contribuição é feita a verificação
 #     for key, value in pessoa.items():
@@ -616,7 +633,7 @@
 # else:
 #     # Lembrando que para se aposentar nesse desafio o minimo e 35 anos
 #     pessoa['Contrato'] = int(input('Ano de contratação : '))
-#     pessoa['Salário'] = float(input('Salário : R$')).conjugate() # Me retorna a forma basica de um numeero float 
+#     pessoa['Salário'] = float(input('Salário : R$')) # Me retorna a forma basica de um numeero float 
 #     # SUBTRAIR ANO DE NASCIMENTO DA PESSOA COM O ANO DE CONTRATAÇÃO QUE ELA TEVE,
 #     # ASSIM OBTENHO A IDADE INICIAL DE TRABALHO E SOMO COM OS ANOS MINIMOS DE CONTRIBUIÇÃO QUE É 35
 #     aposentar = (pessoa['Contrato'] - aux) + 35 # Cálculo para saber o tempo que resta de contribuição
@@ -624,7 +641,7 @@
 #     for keys, valor in pessoa.items():
 #         print(f'{keys} tem valor {valor}')
     
-# desafio 93 (Criar um programa para ler um jogador e quantas partidas ele fez, depois ler a quantidade de gols e colocar uma lista, guardar tudo num dicionario)
+# desafio 93º (Criar um programa para ler um jogador e quantas partidas ele fez, depois ler a quantidade de gols e colocar uma lista, guardar tudo num dicionario)
 # players = {}
 # players['jogador'] = str(input('Insira o nome do jogador : ')).strip()
 # players['partidas'] = int(input('Insira quantas partidas o jogador fez: '))
@@ -636,6 +653,7 @@
 #     lista.append(aux)
 # players['Gols marcados'] = lista
 # players['Soma de todos os gols nas partidas'] = soma
+# # players['Soma de todos os gols nas partidas'] = sum(lista) # Soma todos os elementos da lista, outro jeito de fazer a linha anterior
 
 # print(20*'=')
 # for chaves, valor in players.items():
@@ -647,18 +665,20 @@
 #     print(f'-> Na partida {i}, fez {lista[i]} gols.') 
 # print(f'Foi um total de {players['Soma de todos os gols nas partidas']} gols.')
 
-# desafio 94 (Criar um programa pra leitura de varias pessoas, perguntando o nome, sexo e idade, os dados devem ser guardados em um dicionario separado para cada pessoa
-# No final mostrar quantas pessoas foram cadastradas, a média de idade de todos, uma lista com todas as mulheres e uma lista com todas as pessoas com idade acima da média)
+# desafio 94º (Criar um programa pra leitura de varias pessoas, perguntando o nome,
+# sexo e idade, os dados devem ser guardados em um dicionario separado para cada pessoa
+# No final mostrar quantas pessoas foram cadastradas, a média de idade de todos, 
+# uma lista com todas as mulheres e uma lista com todas as pessoas com idade acima da média)
 # pessoas = dict()
 # cadastros = [] # Lista com os dicionarios de cada usuario
 # mulheres = [] # Lista pra guardar as mulheres cadastradas
 # maior = 0
 # contem_nomes = []
-# media_idade = 0 # variavel para fazer a soma e media da idade do grupo das pessoas
+# soma_idade = 0 # variavel para fazer a soma e media da idade do grupo das pessoas
 # while True:
 #     pessoas['Nome'] = str(input('Insira seu nome : ')).strip()
 #     pessoas['idade'] = int(input('Insira sua idade : '))
-#     media_idade += pessoas['idade']
+#     soma_idade += pessoas['idade']
 #     if maior < pessoas['idade'] and pessoas['idade'] > 30: # Estabeleci uma idade para > que ela as pessoas serem acima da media
 #         maior = pessoas['idade']
 #         contem_nomes.append(pessoas['Nome'])
@@ -673,19 +693,29 @@
 #         op = str(input('Quer continuar [S/N]: ')).strip().upper()[0]
 #     if op == 'N':
 #         break;
+# media_idade = soma_idade/len(cadastros)
 # print(f'O grupo tem {len(cadastros)} pessoas')
-# print(f'O grupo tem uma media de {media_idade/len(cadastros)} anos!')
+# print(f'O grupo tem uma media de {media_idade:5.2f} anos!')
 # print(f'As mulheres cadastradas foram', end=' ')
 # for lista, valor in enumerate(mulheres):
 #     print(valor, end=' ')
 # print() # Pula linha
 # print('Pessoas acima da média : ')
-# for i in range(len(contem_nomes)): 
-#     if contem_nomes[i] == cadastros[i]['Nome']: # O que acontece aqui é que a cada iteração, o que esta na lista de nomes de pessoas acima da 
-#         print(cadastros[i])                     # media verifica antes, é comparada com o dicionario de cadastros de pessoas, onde em cada 
-#                                                 # iteração ate o tamanho de cadastro ele pega somente o valor que esta em nome['pessoa'] para fazer a comparação
-            
-# desafio 95 (Aprimorar o desafio 93, pode ser quantas pessoas o usuario quiser, mostrar tipo uma tabela de seleção, para que o usuario escolha e o programa mostre o aproveitmento do jogador)
+# # Este é o jeito correto de fazer, consegui arrumar a lógica
+# # De forma bem resmida, a lista onde contendo os dicionarios é percorrida e comparada aonde tem  'idade', 
+# # o valor é pego e verificado se é > que a media de idade do grupo inteiro, pós isso ele imprime a pessoa acima da média
+# for i in range(len(cadastros)):
+#     if cadastros[i]['idade'] >= media_idade:
+#         print(f'{cadastros[i]['Nome']}', end=' ')
+
+# # Este é o jeito antigo que eu fiz, nao é o mais correto e funciona em alguns casos, otros nao
+# # for i in range(len(contem_nomes)): 
+# #     if contem_nomes[i] == cadastros[i]['Nome']: # O que acontece aqui é que a cada iteração, o que esta na lista de nomes de pessoas acima da 
+# #         print(cadastros[i])                     # media verifica antes, é comparada com o dicionario de cadastros de pessoas, onde em cada 
+# #                                                 # iteração ate o tamanho de cadastro ele pega somente o valor que esta em nome['pessoa'] para fazer a comparação
+
+
+# desafio 95º (Aprimorar o desafio 93, pode ser quantas pessoas o usuario quiser, mostrar tipo uma tabela de seleção, para que o usuario escolha e o programa mostre o aproveitmento do jogador)
 # players = {}
 # cadastros = [] # Conterá os cadastros dos players de um dicinário
 # while True:
