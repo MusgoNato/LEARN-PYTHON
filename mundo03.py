@@ -754,3 +754,63 @@
 #         for i in range(len(aux)):
 #             print(f'-> Na partida {i}, fez {aux[i]} gols.')
 # print('VOLTE SEMPRE! :)')
+
+# Referente a aula 20
+# Toda função em python é passado os parametros sempre por referencia
+# Para usos de funções normalmente acontecem rotinas programando, quando isso acontece o normal é usar funções, justamente para diminuir o trabalho de uma rotina, deixando uma função fazer o trabalho dela
+# Exemplo de função
+# def lin(texto): # Esta variavel pode ser chamada de qualquer coisa, pois ela ira receber o parametro que darei na chamada da função
+#     print('-'*30)
+#     print(texto)
+#     print('-'*30)
+# # Aqui será o programa principal
+# msg = 'Pão'
+# lin(msg) # Como toda função em python é passado como referencia e nao por valor, tudo que for modificado dentro da função será refletido fora dela
+
+# Empacotamento
+# O Empacotamento é usado quando ao chamar uma função no meu programa, o usuario podera colocar mais de um parametro por chamada de função
+# Ex:
+# def soma(*a): # Ao fazer isso ele empacota tudo em uma variavel só, onde esta vira um tupla
+#     s = 0
+#     for valor in a: # Neste caso estou desempacotand a variavel, como virou uma tupla, é necessario acessar seus valores 
+                      # somando-os individualmente e armazenando na variavel 's'
+#         s += valor
+#     print(s) # Após tudo isso é impresso na tela o valor de soma 
+# soma(5, 5)
+# soma(5, 5, 5) # Aqui ocorre a chamada da função novamente porem com um parametro a mais, nestes casos quando nao sei se o usuario colocara mais de um parametro
+#               # é melhor usar o Empacotamento, isso funciona colocando * antes da variavel no cabeçalho da função
+
+# # Troca de valores na chamada da função
+# def soma(a, b): # Neste caso o a vale 1 e b vale 5, pois foi trocado o valor na chamada da função
+#     s = a + b
+#     print(s)
+# soma(b=5, a=1) # O python me permite trocar a ordem dos valores que estou passando
+
+# Usando lista em função, dobrando os valores com uma lista
+# def dobra(lista): # A lista é passada como parametro
+#     s = 0
+#     for valor in lista: # Para calcular o dobro de cada elemento um loop é usado
+#         s = valor * 2
+#         print(s, end=' ')
+
+# valores = [1, 2, 3, 4, 5] 
+# dobra(valores) # Lembrando, no python qualquer valor passado como parametro é passado por referencia,
+#                # isto é o parametro passado terá seu valor modificado tanto dentro quanto fora da função
+
+# desafio 96º (Ler largura e comprimento e dizer a area do terreno, tudo isso dentro de uma função, esta chamada area)
+# def area(): # Função que calcula a area de acordo com a largura e comprimento que será perguntado internamente nela
+#     a = float(input('Insira a largura : '))
+#     b = float(input('Insira o comprimento : '))
+#     resultado = a * b
+#     print(f'A area de um terreno de {a:.2f}X{b:.2f} é {resultado:.2f}m²')
+# area() # Chamada da função
+
+# desafio 97º (Criar uma funçã escreva onde o tamanho da linha de separação acompanhara o tamanho da string)
+# def escreva(mensagem):
+#     print('-=' * len(mensagem))
+#     print(f'{mensagem:^}')
+#     print('-=' * len(mensagem))
+# msg = str(input('Insira uma mensagem : ')).strip()
+# escreva(msg)
+
+# desafio 98º ()
