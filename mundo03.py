@@ -806,11 +806,76 @@
 # area() # Chamada da função
 
 # desafio 97º (Criar uma funçã escreva onde o tamanho da linha de separação acompanhara o tamanho da string)
-# def escreva(mensagem):
+# def escreva(mensagem): # Essa função não centraliza a string passada
+#     # Para centralizar é necessario armazenar o tamanho da msg
+#     # tam = len(mensagem) + 4 # Aqui será feito um incremento no tamanho da mensagem, acrescentando 4 espaços a+
+#     # print(f'  {mensagem}') # Da-se os espaços pra centralizar a mensagem
 #     print('-=' * len(mensagem))
-#     print(f'{mensagem:^}')
+#     print(f'{mensagem}')
 #     print('-=' * len(mensagem))
 # msg = str(input('Insira uma mensagem : ')).strip()
 # escreva(msg)
 
-# desafio 98º ()
+# desafio 98º (Função chamada contador, receba 3 parametro, o programa realiza 3 contagem, 1º realizando de 1 ate 10, de 1 em 1, 2º de 10 ate 0, de 2 em 2 e a 3º, uma contagem personalizada)
+# from time import sleep
+# def contador(inicio, fim, passo):
+#     print('Agora é sua vez de personalizar a contagem!')
+#     aux = 0 # Variavel para trocar os indices de inicio e fim
+#     # verificação para trocar o valor do passo caso seja número negativo
+#     if passo <= 0:
+#         passo = 1
+#     print(f'Contagem de {inicio} até {fim} de {passo} em {passo}')
+#     # Troca dos valores de começo e fim
+#     if inicio > fim:
+#         aux = fim
+#         fim = inicio
+#         inicio = aux
+#     # No for abaixo dentro do sort, os elementos sao ordenados no modo descendente apos o fim do loop 
+#     for i in sorted(range(inicio, fim + 1, passo), reverse= True): # 3º condição (inicio, fim e passo personalizado)
+#         print(i, end=' ', flush=True)
+#         sleep(0.5)
+
+# # Programa principal
+# print('Contagem de 1 até 10 de 1 em 1')
+# for i in range(1, 11): # 1º condição (1 até 10)
+#     print(i, end=' ', flush=True) # Nas versões atuais, ele cria um buffer de espera na tela, para este buffer desaparecer e correr normalmente, ele tem que ser desativado, para iss o fflush deve ser True
+#     sleep(0.5)
+# print()
+# print('Contagem de 0 até 10 de 2 em 2')
+# for i in range(10, 0, -2): # 2º condição (10 até 0)
+#     print(i, end=' ', flush=True)
+#     sleep(0.5)
+# print()
+# inicio = int(input('Insira o inicio do loop : ')) 
+# fim = int(input('Insira o fim do loop : '))
+# passo = int(input('Insira o passo a passo do loop : '))   
+# contador(inicio, fim, passo) # Chamada da função
+
+# desafio 99º (função chamada maior, passo quantos parametros for, retornar a cada iteração o maior elemento e fazer isso ate sobrar um valor só)
+# def maior(* numeros):
+#     for i in numeros:
+#         print(i, end=' ')
+#     print(f'Foram informados {len(numeros)} valores ao todo')
+#     print(f'o maior valor foi {max(numeros)}')
+# # Programa principal
+# maior(3,7,15)
+# maior(9,16,100)
+# maior(2,10,8,7,4,6,5,0)
+
+# desafio 100º (Função chamada sorteia() e outra somaPar(), usando lista chamada numeros, a 1º função sorteia numeros e coloca na lista, a 2º mostra soma de todos os valores pares da lista)
+# from random import randint
+# def sorteia(lista):
+#     for i in range(1, 6):
+#         lista.append(randint(0, 10))
+#     print(lista)
+# def somaPar(lista):
+#     aux = 0 # Faz a soma dos elementos pares
+#     for i in lista:
+#         if i % 2 == 0:
+#             aux += i
+#     print(f'A soma dos valores é {aux}')
+
+# # Programa principal
+# lista = []
+# sorteia(lista)
+# somaPar(lista)
