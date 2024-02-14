@@ -879,3 +879,5 @@
 # lista = []
 # sorteia(lista)
 # somaPar(lista)
+
+# Referente a aula 20 parte 2
