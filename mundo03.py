@@ -881,3 +881,94 @@
 # somaPar(lista)
 
 # Referente a aula 20 parte 2
+# Interactive Help
+# para obter uma ajuda interativa em python, usa-se help(), como argumento coloca-se a função, um ex é o help(print)
+# dessa forma ele me retorna a documentação da função interna print
+# Doc interno de um comando, para saber os parametros do input por exemplo usa-se : print(input.__doc__)
+
+# docstrings
+# Docstrings são as documentações das funções
+# def contador(i, f, p) # O código não tem documentação, para outro programador saber o que esta função faz, é necessaria a documentação da função
+# contador(2, 10, 2) # Estes sao chamados parametros reais, sao copiados e levados para os parametros globais, da propria função e nao da sua chamada
+# Docstrings começam na linha de baixo da declaração da função, elas sao definidas com """abc"""
+
+# Argumentos opcionais
+# Para parametros opcionais, nas chamadas das funções, as vezes o usuario pode chamar a mesma função porem sem os parametros necessários
+# def soma(a, b, c):
+#      s = a + b + c
+# soma(1, 2, 3) # Aqui ocorre normalmente a chamada sem nenhum problema
+# soma(1, 2) # Aqui da erro pois nao foram informados os 3 parametros
+# def soma(a, b, c=0) # Aqui estou declarando que o c é um parametro opcional
+# Na chamada da função informando os 3 valores novamente que, esse código nao dara problema a nao ser que eu insira mais dos parametros que forma impostos na declaração da função.
+# Para qualquer quantidade de variaveis ai é necessario usar o empacotamento de variavel usando soma(*variavel)
+
+# Escopo de variáveis
+# Na programação o escopo de variavel é aonde a variavel vai ou nao existir
+# Mesmo uma variavel declarada fora de uma função, ela sera global, dentro da função mesmo que nao passada como parametro ela valera o valor atribuido fora da função
+# def printar():
+#   x = 0
+#   print(f'Valor de {n}') # 'n' funciona dentro e fora da função, ou seja ela é global
+#   print(f'Valor de {x}') # 'x' é uma variavel local, fora dela, a propria nao existe
+# n = 2
+# printar()
+
+# def teste(b):
+#     a = 8 # Mesmo criando outra variavel com o mesmo nome da variavel global, é criada outra variavel a, porem sendo local, funcionando apenas dentro da função
+#     b += 4
+#     c = 2
+#     print(f'a vale {a}')
+#     print(f'b vale {b}')
+#     print(f'c vale {c}')
+# a = 5 # Como é global, esta é criada e nao modificado o valor fora da função
+# teste(a) # O valor de a é copiado e colocado dentro de b, que é o paramentro imposto na declaração da função
+# print(f'a fora vale {a}')
+
+# teste(b):
+#     gloabal(a) # Quando colocado esta função, ela praticamente diz ao meu programa nao criar uma variavel local,
+                # ele vai usar o valor a global, tanto dentro quanto fora da função, usando esta propria função, a váriavel mudará seu valor 
+#     b += 4
+#     c = 2
+#     print(f'a vale {a}')
+#     print(f'b vale {b}')
+#     print(f'c vale {c}')
+# a = 5
+# teste(a)
+# print(f'a fora vale {a}')
+
+
+# # Retorno de resultados (Função com retorno de valor)
+# def soma(a=0,b=0,c=0):
+#     s = a+b+c
+#     return s # A variavel é s retornada
+# # Aqui sao declaradas respostas das somas, assim o que for somado em s vai ser posto nas variaveis rs criadas
+# r1 = soma(1,2,3) 
+# r2 = soma(1,2,1)
+# r3 = soma(1,2,2)
+# print(f'{r1} {r2} {r3}')
+
+# Um exemplo de outra função com retorno de valor
+# def fatorial(n=1):
+#     for i in range(1, n):
+#         print(n)
+#         n *= i
+#     return n
+# print(fatorial(5)) 
+
+# desafio 101º (Criar função chamada voto(), recebendo como parametro o ano de nascimento, retornando um valor literal indicando se uma pessoa tem o voto obrigatorio (18 anos), opcional (65 anos) ou negado o voto (-18 anos))
+# Importação de bibliotecas
+# from datetime import date
+
+# # Função
+# def voto(nascimento):
+#     if nascimento >= 18:
+#         if nascimento > 65:
+#             return 'OPCIONAL'
+#         return 'OBRIGATÓRIO'
+#     else:
+#         return 'NEGADO'
+# # Programa principal
+# ano = int(input('Insira o ano de nescimento : '))
+# nascimento = date.today().year - ano
+# print(f'Com {nascimento} anos o voto é {voto(nascimento)}')
+
+# desafio 102º ()
