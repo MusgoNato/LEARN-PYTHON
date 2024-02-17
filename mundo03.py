@@ -971,4 +971,83 @@
 # nascimento = date.today().year - ano
 # print(f'Com {nascimento} anos o voto é {voto(nascimento)}')
 
-# desafio 102º ()
+# desafio 102º (Criar uma função fatorial, com dois parametros, 1º indique o numero a calcular e 2º chamado show,
+# que sera um valor logico opcional, indicando se sera mostrado ou nao na tela o processo de calculo do fatorial)
+# # Funções
+# def fatorial(num, show=False): # 0 no show indica falso
+#     # Docstring da função
+#     """ Função fatorial
+#         1º parametro (num) -> Numero a ser calculado
+#         2º parametro (show=False) -> Valor lógico a ser passado, caso False nao mostra o processo do cálculo, True mostra o processo
+#     """
+#     resultado = 1
+#     aux = 1
+#     if show == True:
+#         for i in range(1, num + 1):
+#             resultado *= i
+#             print(f'{i}', end=' ')
+#         return resultado
+#     else:
+#        for i in range(1, num + 1):
+#             aux *= i
+#        return aux
+
+
+# # Programa principal
+# print(fatorial(5, False)) # Para impressao do resultado do return, LOGICAMENTE USA-SE O PRINT***
+
+# desafio 103º (Criar função ficha que recebe 2º parametros, o nome e o numero de gols marcados, o programa devera ser capaz de mostrar a ficha do jogador, mesmo que nao preechido corretamente)
+# # Funções
+# def ficha(jogador=0, gols=0):
+#     if jogador == '':
+#         jogador = '<desconhecido>'
+#     if gols == '':
+#         gols = 0
+#     print(f'O jogador {jogador} fez {gols} gols!')
+
+# # Programa principal
+# jogador = str(input('Insira o nome do jogador : ')).strip()
+# gols = str(input('Insira os gols marcados : ')).strip() # Mudei para string o tipo para facilitar a verificação na função
+# ficha(jogador, gols)
+
+# desafio 104º (criar uma função leiaint, so deixa o usuario passar caso digite um numero inteiro)
+# def Leiaint():
+#     global n
+#     while n.isdigit() != True:
+#         print('ERRO! NUMERO NAO INTEIRO')
+#         n = input('Insira um numero : ')
+#     return n
+
+# n = input('Insira um numero : ')
+# Leiaint()
+# print(f'O numero inteiro digitado foi {n}')
+
+# desafio 105º (Retornar um dicionario com função notas, com notas do aluno e sua situacao vai ser opcional, caso false nao e colocado no dicionario)
+# # Funções
+# def notas(*notas, sit=0):
+#     media = 0
+#     soma = 0
+#     dicionario = dict()
+#     for i in range(len(notas)):
+#         soma += notas[i]
+#     dicionario['Total'] = soma
+#     maior = max(notas)
+#     dicionario['Maior'] = maior
+#     menor = min(notas)
+#     dicionario['Menor'] = menor
+#     media = soma/len(notas)
+#     dicionario['Média'] = media
+#     if sit == True:
+#         if media > 6:
+#             dicionario['Sit'] = 'MUITO BAO'
+#         elif media < 6:
+#             dicionario['Sit'] = 'MUITO RUIM'
+#         elif media == 6:
+#             dicionario['Sit'] = 'MELHORE'
+#     return dicionario
+
+# # Programa principal
+# aluno = notas(10,10,10, sit=True)
+# print(aluno)
+
+# desafio 106º (mini sitema de ajuda interativa, tipo o help, quando o comando aparecer ele vai mostrar a documentação do modulo, função ou biblioteca)
