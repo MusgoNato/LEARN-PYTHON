@@ -955,17 +955,21 @@
 # print(fatorial(5)) 
 
 # desafio 101º (Criar função chamada voto(), recebendo como parametro o ano de nascimento, retornando um valor literal indicando se uma pessoa tem o voto obrigatorio (18 anos), opcional (65 anos) ou negado o voto (-18 anos))
-# Importação de bibliotecas
+# # Importação de bibliotecas
 # from datetime import date
 
 # # Função
 # def voto(nascimento):
+#     # Aqui eu posso estar colocando o escopo de imprtação
+#     # Caso a chamada da biblioteca datetime seja aqui dentro do escopo da função, esta funcionara somente dentro da função e nao fora dela
+#     # Isso economiza memória
 #     if nascimento >= 18:
 #         if nascimento > 65:
 #             return 'OPCIONAL'
 #         return 'OBRIGATÓRIO'
 #     else:
 #         return 'NEGADO'
+
 # # Programa principal
 # ano = int(input('Insira o ano de nescimento : '))
 # nascimento = date.today().year - ano
@@ -981,24 +985,27 @@
 #         2º parametro (show=False) -> Valor lógico a ser passado, caso False nao mostra o processo do cálculo, True mostra o processo
 #     """
 #     resultado = 1
-#     aux = 1
-#     if show == True:
-#         for i in range(1, num + 1):
-#             resultado *= i
-#             print(f'{i}', end=' ')
-#         return resultado
-#     else:
-#        for i in range(1, num + 1):
-#             aux *= i
-#        return aux
+#     for i in range(1, num + 1):
+#         if show: # Caso seja verdade
+#             print(i, end=' ') # Imprime o i
+#             if i < num: # Caso o i seja menor que o proprio numero da entrada
+#                 print(' x ', end=' ') # Mostra esse print
+#             else: # Caso o i chegue no final
+#                 print(' = ', end=' ') # imprime o resultado
+#         resultado *= i # Aqui calcula o resultado
+#     return resultado # Me retorna o resultado após o loop
 
 
 # # Programa principal
-# print(fatorial(5, False)) # Para impressao do resultado do return, LOGICAMENTE USA-SE O PRINT***
+# print(fatorial(5)) # Para impressao do resultado do return, LOGICAMENTE USA-SE O PRINT***
 
 # desafio 103º (Criar função ficha que recebe 2º parametros, o nome e o numero de gols marcados, o programa devera ser capaz de mostrar a ficha do jogador, mesmo que nao preechido corretamente)
 # # Funções
-# def ficha(jogador=0, gols=0):
+# # nestes parametros opcionais, ao inves de verificar se esta vazio o jogador, na propria inicialização, posso estar colocando diretamente jogador = '<desconhecido>'
+# def ficha(jogador=0, gols=0): # Parâmetros opcionais
+#     """Função ficha(p1, p2):
+#     parametro jogador: Parâmetro opcional que recebe o nome do jogador
+#     parametro gols: Parâmetro opcional que recebe a quant de gols marcados pela variavel opcional jogador"""
 #     if jogador == '':
 #         jogador = '<desconhecido>'
 #     if gols == '':
@@ -1012,9 +1019,12 @@
 
 # desafio 104º (criar uma função leiaint, so deixa o usuario passar caso digite um numero inteiro)
 # def Leiaint():
-#     global n
+#     """Função LeiaInt():
+#     Sem parâmetro: A função verifica se a string lida é um numero (digito), caso False, a função entra em loop até a condição ser True
+#     """
+#     global n # A váriavel n é usada como global pois foi lida fora da função, e para sua verificação no laço é necessario essa linha de código
 #     while n.isdigit() != True:
-#         print('ERRO! NUMERO NAO INTEIRO')
+#         print('ERRO! NUMERO NÃO INTEIRO')
 #         n = input('Insira um numero : ')
 #     return n
 
@@ -1025,6 +1035,10 @@
 # desafio 105º (Retornar um dicionario com função notas, com notas do aluno e sua situacao vai ser opcional, caso false nao e colocado no dicionario)
 # # Funções
 # def notas(*notas, sit=0):
+#     """Função notas
+#     Pârametro *notas: Variavel Empacotada, ou seja, pode-se usar quantas entradas forem necessarias
+#     Pârametro sit: Variavel opcional, caso seja True inclui a situação do usuário no dicionário 
+#     de acordo com suas notas"""
 #     media = 0
 #     soma = 0
 #     dicionario = dict()
@@ -1051,3 +1065,28 @@
 # print(aluno)
 
 # desafio 106º (mini sitema de ajuda interativa, tipo o help, quando o comando aparecer ele vai mostrar a documentação do modulo, função ou biblioteca)
+# # Funções
+# def ajuda(var, cores):
+#     """Função ajuda: Esta função informa o que a função passada pelo stdin faz, suas informações, parametros, etc.
+#     1ª parametro(var) : Esta variavel """
+#     while var != 'Fimfim':
+#         var = str(input('Função ou biblioteca > ')).strip()
+#         if var == 'fim':
+#             print('Até logo.')
+#             break;
+#         else:
+#             tam = len(var) + 4
+#             aux = '-='
+#             print(f'{aux}{cores["azul"]}' * tam)
+#             print(f'     {var}')
+#             print(f'{aux}{cores["azul"]}' * tam)
+#             print(cores["limpa"])
+#             print(help(var))
+
+# # Programa principal
+# cores = {'verde': '\033[0;32m', 'azul': '\033[0;31m', 'limpa' : '\033[m'}
+# var = ''
+# print('\033[1;31mSISTEMA DE AJUDA PYHELP\033[m')
+# ajuda(var, cores)
+
+# Referente a aula 21º (Modularização)
