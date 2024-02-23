@@ -1,1 +1,6 @@
+# Acessa a pasta do arquivo em binario
 /_pycache_
+
+
+# Ignora os arquivos com extensão pyc
+*.pyc
