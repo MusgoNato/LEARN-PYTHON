@@ -1106,8 +1106,36 @@
 # Em caso de pacotes, todos os arquivos sao agrupados em um unico pacote, assim portanto, so é necessario importar o pacote desejado com os modulos que são separados por assuntos
 # Quando há o mesmo nome de modulos no python, o que sera executado sera o ultimo que foi chamado
 
-from uteis import numeros
+# Importação do modulo numeros do pacote uteis
+# from uteis import numeros
 
-n = int(input('Inisra um numero : '))
-fat = numeros.fatorial(n)
-print(fat)
+# n = int(input('Insira um numero : '))
+# fat = numeros.fatorial(n)
+# print(fat)
+
+# desafio 107º (Criar modulo chamado moeda.py, onde contem funções aumentar, diminuir, dobro e metade, 
+# faça um programa que importe esse modulo e algumas dessas funções)
+
+# Chamada do pacote contendo os modulos
+# from ex107 import moeda
+
+# # Programa principal
+# n = float(input('Insira um valor : '))
+# print(f'Aumentando 10%, temos {moeda.aumentar(n, 10)}')
+# print(f'Diminuindo 5%, temos {moeda.diminui(n, 5)}')
+# print(f'O dobro de {n} é {moeda.dobro(n)}')
+# print(f'A metade de {n} é {moeda.metade(n)}')
+
+# desafio 108º (colocar formatação adequada nos valores passados do ex 107)
+from ex108 import moedas
+from ex107 import moeda
+
+
+n = float(input('Insira um valor : '))
+print(f'Aumentando 10%, temos {moedas.formatados(moeda.aumentar(n, 10))}')
+print(f'Diminuindo 5%, temos {moedas.formatados(moeda.diminui(n, 5))}')
+print(f'O dobro de {n} é {moedas.formatados(moeda.dobro(n))}')
+print(f'A metade de {n} é {moedas.formatados(moeda.metade(n))}')
+
+# desafio 109º()
+# É necessario fazer o 108 primeiro
