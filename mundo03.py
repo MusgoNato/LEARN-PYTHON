@@ -1090,3 +1090,24 @@
 # ajuda(var, cores)
 
 # Referente a aula 21º (Modularização)
+# A modularização é a simplificação e organização do código em si, o foco principal e dividir o programa grande,
+# dividindo ele em pequenos pedaços
+# Os modulos eles podem ser separados em assuntos, ou seja, em um pacote, existem assuntos, que serao as chamadas para os modulos
+# PACOTE -> UTEIS
+# MODULOS DENTRO DE UTEIS -> numeros.py
+# Esse arquivo numeros.py, contem funções que calculam algum tipo de numero, ou retornam algum valor numerico.
+# O 'numeros' é o assunto, ou seja, o assunto poderia variar de acordo com o contexto que as funções dentro do arquivo fazem
+# Por exemplo uma função que calcula datas de nascimento, para melhor leitura do código, o arquivo pode se chamar datas.py
+# Assim, nao fica confuso o programa e sao separados por assunto, por causa do contexto e tambem por estarem dentro de um pacote
+# Em pacotes, sempre é criado um arquivo adicional, chamado __init__.py, todo arquivo com a extensao py é considerado um módulo
+# Como em python, toda extensao py é considerada um modulo, para importar um modulo em python que seja eu quem criei, simplismente utiliza-se o comando import
+# Ex: import uteis
+# Para usar alguma função la dentro desse arquivo, é necessario o acesso desse jeito > uteis.numeros()
+# Em caso de pacotes, todos os arquivos sao agrupados em um unico pacote, assim portanto, so é necessario importar o pacote desejado com os modulos que são separados por assuntos
+# Quando há o mesmo nome de modulos no python, o que sera executado sera o ultimo que foi chamado
+
+from uteis import numeros
+
+n = int(input('Inisra um numero : '))
+fat = numeros.fatorial(n)
+print(fat)
