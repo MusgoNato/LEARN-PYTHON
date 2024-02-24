@@ -50,20 +50,3 @@ def resumo(num, aumento=0, diminuição=0):
     print(f'A metade de {moeda(num)} é ${metade(num, True)}')
     print('-=' * tam)
 
-# Função que realiza a operação somente se for um valor numerico valido
-def dado():
-    num = input('Insira um valor : ').strip()
-    while num == '': # Verificação de erro caso o usuario insira um espaço vazio de inicio
-        print('ERRO! NUMERO NÃO INTEIRO')
-        num = input('Insira um numero : ').strip()
-    if ',' in num: # Caso contenha na entrada uma virgula, esta é substituida por . flutuante, porem continua sendo uma string
-        num = num.replace(',','.', 1)
-    while True: # Enquanto a string passada nao for um numero valido, nao saira do loop continuo
-        if num == num.isdigit():
-            print('ERRO! NUMERO NÃO INTEIRO')
-            num = input('Insira um numero : ').strip()
-        else:
-            break;
-    num = float(num) # Faz a conversao de string para float
-    return num # Retorna um float ao final de todo o processo
-

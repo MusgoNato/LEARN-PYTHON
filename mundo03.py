@@ -1130,17 +1130,17 @@
 # from ex108 import moeda
 
 # n = float(input('Insira um valor : '))
-# print(f'Aumentando 10%, temos ${moeda.moeda(moeda.aumentar(n, 10))}')
-# print(f'Diminuindo 5%, temos ${moeda.moeda(moeda.diminui(n, 5))}')
-# print(f'O dobro de {n} é ${moeda.moeda(moeda.dobro(n))}')
-# print(f'A metade de {n} é ${moeda.moeda(moeda.metade(n))}')
+# print(f'Aumentando 10%, temos R${moeda.moeda(moeda.aumentar(n, 10))}')
+# print(f'Diminuindo 5%, temos R${moeda.moeda(moeda.diminui(n, 5))}')
+# print(f'O dobro de R${moeda.moeda(n)} é R${moeda.moeda(moeda.dobro(n))}')
+# print(f'A metade de R${moeda.moeda(n)} é R${moeda.moeda(moeda.metade(n))}')
 
 # desafio 109º(Agora é possivel escolher se o valor sera formatado ou nao)
 
 # from ex109 import moeda
 
 # n = float(input('Insira um valor : '))
-# print(f'Aumentando 10%, temos ${moeda.aumentar(n, 10, False)}')
+# print(f'Aumentando 10%, temos ${moeda.aumentar(n, 10, True)}')
 # print(f'Diminuindo 5%, temos ${moeda.diminui(n, 5, True)}')
 # print(f'O dobro de {moeda.moeda(n)} é ${moeda.dobro(n, False)}')
 # print(f'A metade de {moeda.moeda(n)} é ${moeda.metade(n, True)}')
@@ -1153,14 +1153,21 @@
 
 # desafio 111º (Somente criar um sub-pacote e organizar melhorar o código, nesse caso acessando um pacote, depois sub-pacote e ai sim importar o modulo)
 # from ex111.utilidadesCeV import moeda
+# from ex111.utilidadesCeV import dado
 
 # num = float(input('Insira um numero : '))
 # moeda.resumo(num, 80, 30)
 
 # desafio 112º (Criar uma verificação que o código somente executa caso tenha um valor monetario valido na entrada)
-# Importação dos módulos
-from ex112 import moeda
+# # Importação dos módulos
+# from ex112.utilidadesCeV import moeda
+# from ex112.utilidadesCeV import dado
 
-# Programa principal
-n = moeda.dado()
-moeda.resumo(n, 80, 30)
+# # Programa principal
+# # n = dado.Leia_Dinheiro('Insira o valor : ') # Uma abordagem mais direta, no módulo do pacote dado tema mais detalhes
+# n = dado.Leia_Dinheiro()
+# moeda.resumo(n, 80, 30)
+
+# UM PACOTE EM PYTHON DEVE TER O __init__.py como arquivo dentro dele
+
+# Referente a aula 23

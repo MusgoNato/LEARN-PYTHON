@@ -1,0 +1,1 @@
+# from utilidadesCeV import moeda, dado # Essa importção ela serve mais para caso o arquivo principal esteja no mesmo pacote que utilidadescev
