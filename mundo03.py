@@ -1127,15 +1127,40 @@
 # print(f'A metade de {n} é {moeda.metade(n)}')
 
 # desafio 108º (colocar formatação adequada nos valores passados do ex 107)
-from ex108 import moedas
-from ex107 import moeda
+# from ex108 import moeda
 
+# n = float(input('Insira um valor : '))
+# print(f'Aumentando 10%, temos ${moeda.moeda(moeda.aumentar(n, 10))}')
+# print(f'Diminuindo 5%, temos ${moeda.moeda(moeda.diminui(n, 5))}')
+# print(f'O dobro de {n} é ${moeda.moeda(moeda.dobro(n))}')
+# print(f'A metade de {n} é ${moeda.moeda(moeda.metade(n))}')
 
-n = float(input('Insira um valor : '))
-print(f'Aumentando 10%, temos {moedas.formatados(moeda.aumentar(n, 10))}')
-print(f'Diminuindo 5%, temos {moedas.formatados(moeda.diminui(n, 5))}')
-print(f'O dobro de {n} é {moedas.formatados(moeda.dobro(n))}')
-print(f'A metade de {n} é {moedas.formatados(moeda.metade(n))}')
+# desafio 109º(Agora é possivel escolher se o valor sera formatado ou nao)
 
-# desafio 109º()
-# É necessario fazer o 108 primeiro
+# from ex109 import moeda
+
+# n = float(input('Insira um valor : '))
+# print(f'Aumentando 10%, temos ${moeda.aumentar(n, 10, False)}')
+# print(f'Diminuindo 5%, temos ${moeda.diminui(n, 5, True)}')
+# print(f'O dobro de {moeda.moeda(n)} é ${moeda.dobro(n, False)}')
+# print(f'A metade de {moeda.moeda(n)} é ${moeda.metade(n, True)}')
+
+# desafio 110º (Mostrar um resumo das impressoes na tela dos valores)
+# from ex110 import moeda
+
+# num = float(input('Insira um numero : '))
+# moeda.resumo(num, 80, 30)
+
+# desafio 111º (Somente criar um sub-pacote e organizar melhorar o código, nesse caso acessando um pacote, depois sub-pacote e ai sim importar o modulo)
+# from ex111.utilidadesCeV import moeda
+
+# num = float(input('Insira um numero : '))
+# moeda.resumo(num, 80, 30)
+
+# desafio 112º (Criar uma verificação que o código somente executa caso tenha um valor monetario valido na entrada)
+# Importação dos módulos
+from ex112 import moeda
+
+# Programa principal
+n = moeda.dado()
+moeda.resumo(n, 80, 30)

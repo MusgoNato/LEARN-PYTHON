@@ -15,3 +15,9 @@ def dobro(num):
 # Função Metade
 def metade(num):
     return num/2
+
+# Função adicional chamada moeda (mostra o valor formatado)
+def moeda(num):
+    num = str(num)
+    num = num.replace('.', ',')
+    return num
