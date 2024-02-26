@@ -1170,4 +1170,90 @@
 
 # UM PACOTE EM PYTHON DEVE TER O __init__.py como arquivo dentro dele
 
-# Referente a aula 23
+# Referente a aula 23 (Erros e Excessões)
+
+# Erro de sintaxe
+# Ex: primt('asd') # NameError (Erro de nome, ou seja, o comando digitado esta errado sintaticamente)
+
+# Excessão (O exemplo abaixo o comando nao tem erro, porem o n dado nao existe assim ele retorna um erro)
+# Ex: print(n)
+
+# Este código nao tem erro realmente. Porem ao digitar um valor diferente do tipo que se pede, este dara um erro, isso se chama excessão, da certo, mas nao em todos os casos
+# n = int(input('Numero: '))
+# print(f'Você digitou o numero {n}')
+
+# Este código acontece o mesmo, nao há erro aparentemente, como no outro caso acima, strings passadas darao erros, mas caso divida por 0 tambem acontecera um erro
+# Por isso é necessário tratar os erros da entrada do programa
+# Caso dividido por 0, ocorrerá o retorno de um erro chamado ZeroDivisionError
+# a = int(input('Numerado : '))
+# b = int(input('Denominador : '))
+# r = a / b
+# print(f'Resultado é {r}')
+
+# Outro erro comum, com listas
+# lst = [3,6,4]
+# print(lst[3]) # O erro ocorrera porque o indice 3 nao existe, pois os elementos sao 0,1,2, retornando IndexError
+# No caso do dicionarios, sao chamdos keyError (Os indices sao chamdos de keys)
+
+# No caso dos modulos, caso seja importado um modulo nao existente, ocorrera um erro com retorno ModuleNotFoundError
+
+# Todos as excessões são filhas da classe Exception
+# O comando try (Quais os comandos que normalmente darão um problema) significa tentar algo, o except (Caso o problema falhar, a mensagem de erro normalmente aparece no terminal nao ocorrera, sera mostrado o que esta no except) é como um senao
+
+# try: 
+#     # Tentar fazer
+#     a = int(input('Numerador : '))
+#     b = int(input('Denominador : '))
+#     r = a / b
+# except Exception as erro: # Mostrar o tipo de erro, é atribuido em uma variavel erro o tipo de erro que aconteceu
+#     # Se der problema
+#     # Não é necessario mostrar o erro ao usuario, porem da pra mostrar o erro personalizado e assim rastrear o erro nos scripts
+#     print(f'Problema encontrado foi {erro.__class__}') # Me retorna a classe do erro que aconteceu, é tipo um type() no terminal
+# else:
+#     # Caso der certo
+#     print(f'O resultado é {r}')
+# finally: 
+#     # Acontece independente se deu certo ou se deu erro 
+#     print('Volte sempre! Muito obrigado')
+
+# try:
+#     a = int(input('Numerador : '))
+#     b = int(input('Denominador : '))
+#     r = a / b
+# except (ValueError, TypeError): # Se caso um ou outro for verdadeiro a mensagem é mostrada
+#     print('Tivemos um problema com os tipos de dados que você digitou!')
+# except ZeroDivisionError:
+#     print('Não é possivel dividir por 0!')
+# except KeyboardInterrupt:
+#     print('O usuário saiu forçadamente do programa!')
+# else:
+#     print(f'O resultado é {r}')
+# finally:
+#     print('Muito obrigado! Volte sempre!')
+# # Um mesmo try poderá varios excepts, para cada tipo de erro
+
+# Dessafio 113º (Reescrever a função usada no ex 104 leiaint() mas adicionar uma nova função leiafloat(), tratar as entradas com excessões)
+
+# # importação dos pacotes e módulos necessários
+# from ex113.funções import leitura_num
+
+# # Chamada das funções
+# num_int = leitura_num.Leiaint()
+# num_float = leitura_num.LeiaFloat()
+
+# # Impressões
+# print(f'Número digitado foi {num_int}')
+# print(f'Número digitado foi {num_float}')
+
+# desafio 114º (Verificar se um site esta acessivel ou nao e imprimir na tela)
+import urllib3
+site = urllib3.PoolManager()
+try:
+    resposta = site.request('GET', 'https://www.pudim.com.br/')
+    if resposta.status == 200:
+        print('O site esta acessivel!')
+    else:
+        print('O site esta inacessivel!')
+except Exception as excessão:
+    print(f'o erro foi {excessão}')
+
