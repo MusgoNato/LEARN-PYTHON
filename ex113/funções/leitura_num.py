@@ -10,7 +10,7 @@ def Leiaint():
         except KeyboardInterrupt: 
             print('\nO usuario preferiu nao digitar o valor')
             return 0
-        # Caso seja a entrada seja valida como o tipo imposto no pedido do numero inteiro, entra nesse else
+        # Caso a entrada seja valida como o tipo imposto no pedido do numero inteiro, entra nesse else
         else: 
             return n # Retorna o inteiro fornecido
 

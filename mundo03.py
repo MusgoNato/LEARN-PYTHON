@@ -1246,20 +1246,20 @@
 # print(f'Número digitado foi {num_float}')
 
 # desafio 114º (Verificar se um site esta acessivel ou nao e imprimir na tela)
-# import urllib3
-# # O PoolManager serve para tentar fazer uma conexao com algum site
-# site = urllib3.PoolManager()
-# try:
-#     # A reposta obtera a chamada request para algum site, ou seja, a variavel site armazenara um tipo de conexao, ao chamar o request e passar o parametro 'GET', este tentara fazer a conexao com o proximo parametro que seria o site
-#     resposta = site.request('GET', 'https://www.google.com.br/')
-#     # Quando o status da reposta for 200, significa que o site esta acessivel
-#     if resposta.status == 200:
-#         print('O site esta acessivel!')
-#     # Caso contrario o site esta inacessivel
-#     else:
-#         print('O site esta inacessivel!')
-# # Em caso de algm tipo de erro, é chamada a classe Exception, dando-se uma variavel excessão como nome a ela e assim, erros que forem encontrados serao impressos detalhadamete
-# except Exception as excessão:
-#     print(f'o erro foi {excessão}')
+import urllib3
+# O PoolManager serve para tentar fazer uma conexao com algum site
+site = urllib3.PoolManager()
+try:
+    # A reposta obtera a chamada request para algum site, ou seja, a variavel site armazenara um tipo de conexao, ao chamar o request e passar o parametro 'GET', este tentara fazer a conexao com o proximo parametro que seria o site
+    resposta = site.request('GET', 'https://www.google.com.br/')
+    # Quando o status da reposta for 200, significa que o site esta acessivel
+    if resposta.status == 200:
+        print('O site esta acessivel!')
+    # Caso contrario o site esta inacessivel
+    else:
+        print('O site esta inacessivel!')
+# Em caso de algm tipo de erro, é chamada a classe Exception, dando-se uma variavel excessão como nome a ela e assim, erros que forem encontrados serao impressos detalhadamete
+except Exception as excessão:
+    print(f'o erro foi {excessão}')
 
 
