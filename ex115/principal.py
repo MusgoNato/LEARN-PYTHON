@@ -6,8 +6,11 @@ from os import system
 # O programa não utiliza arquivo como pedido, os nomes sao dados e depois nao salvos
 # Lista que vai ser usada para o cadastro das pessoas
 lista_cadastros = []
-# with open('cadastros.txt', 'r') as arquivo:
-#     texto = arquivo.read()
+arquivo = 'cadastros.txt'
+# Tentativa para abri o arquivo, caso nao abra é necessario criar um
+if not func_dados.Verifica_Arquivo(arquivo):
+    func_dados.Cria_Arquivo(arquivo)
+
 while True:
     # Chamada da função
     func_dados.menu()
@@ -22,9 +25,15 @@ while True:
             print('Opção inválida!')
         # Listagem
         if op == 1:
+            # Chama a função para ler um arquivo
+            func_dados.Lê_Arquivo(arquivo)
+            # Chama a função para listagem dos cadastros
             func_dados.listagem(lista_cadastros)
         # Cadastro
         if op == 2:
+            # Chama a função para cadastrar uma pessoa no arquivo
+            func_dados.Cadastra_Arquivo(arquivo)
+            # Chama a função para cadastrar uma pessoas
             func_dados.cadastro(lista_cadastros)
         # Saida
         if op == 3:

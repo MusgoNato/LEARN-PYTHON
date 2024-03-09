@@ -31,12 +31,6 @@ def cadastro(lista_cadastros):
             pessoas.clear()
         # Após dar certo os tipos de nome e idade da pessoa, nao e necessario continuar dentro do loop, o break do else esta para interromper o laço
         else:
-            # with open('cadastros.txt', 'a') as arquivo:
-            #     for i in range(len(lista_cadastros)):
-            #         texto = arquivo.writelines(lista_cadastros[i]['Nome'])
-            #         texto = arquivo.writelines(str(lista_cadastros[i]['Idade']))
-            # print(texto)
-            # sleep(2)
             break;
     system('cls')
 
@@ -52,3 +46,51 @@ def listagem(lista_cadastro):
     print(f'{msg1:<40}{msg2}')
     for i in range(len(lista_cadastro)):
         print(f'{lista_cadastro[i]["Nome"]:<40} {lista_cadastro[i]["Idade"]}')
+
+# Verifica se existe algum arquivo
+def Verifica_Arquivo(arq):
+    try:
+        arquivo = open(arq, 'rt') # 'rt' para ler um arquivo txt
+        arquivo.close()
+    except FileNotFoundError: 
+        return False
+    else:
+        return True
+    
+# Cria o arquivo caso nao exista
+def Cria_Arquivo(arq):
+    try:
+        arquivo = open(arq, 'wt+') # wt+ para escrita em txt e cria um arquivo caso nao exista
+        arquivo.close() 
+    except:
+        print('Houve um erro na criação do arquivo!')
+    else:
+        print('O arquivo foi criado com sucesso!')
+
+# Aqui vai ler o arquivo existente ou que foi criado
+def Lê_Arquivo(arq):
+    try:
+        arquivo = open(arq, '+rt')
+    except:
+        print('Houve um problema')
+    else:
+        print(arquivo.read())
+        arquivo.close()
+        sleep(1)
+
+# Cadastra uma pessoa no arquivo
+def Cadastra_Arquivo(arq, nome='desconhecido', idade=0):
+    try:
+        arquivo = open(arq, 'at')
+    except:
+        print('Houve um erro na abertura do arquivo!')
+    else:
+        try:
+            arquivo.write('\n')
+            arquivo.write(f'{nome};{idade}')
+        except:
+            print('Houve um erro da digitação do arquivo!')
+        else:
+            print('Nome adicionado com sucesso!')
+            arquivo.close()
+
