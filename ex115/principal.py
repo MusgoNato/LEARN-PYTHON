@@ -3,13 +3,13 @@ from funcões import func_dados
 from os import system
 
 # Programa principal
-# O programa não utiliza arquivo como pedido, os nomes sao dados e depois nao salvos
 # Lista que vai ser usada para o cadastro das pessoas
 lista_cadastros = []
-arquivo = 'cadastros.txt'
-# Tentativa para abri o arquivo, caso nao abra é necessario criar um
-if not func_dados.Verifica_Arquivo(arquivo):
-    func_dados.Cria_Arquivo(arquivo)
+
+# arquivo = 'cadastros.txt'
+# # Tentativa para abrir o arquivo, caso nao abra é necessario criar um
+# if not func_dados.Verifica_Arquivo(arquivo):
+#     func_dados.Cria_Arquivo(arquivo)
 
 while True:
     # Chamada da função
@@ -25,14 +25,26 @@ while True:
             print('Opção inválida!')
         # Listagem
         if op == 1:
-            # Chama a função para ler um arquivo
-            func_dados.Lê_Arquivo(arquivo)
+            # # CASO DESEJE COM ARQUIVO TXT
+            # # Chama a função para ler um arquivo
+            # func_dados.Lê_Arquivo(arquivo)
+
             # Chama a função para listagem dos cadastros
             func_dados.listagem(lista_cadastros)
         # Cadastro
         if op == 2:
-            # Chama a função para cadastrar uma pessoa no arquivo
-            func_dados.Cadastra_Arquivo(arquivo)
+            # # CASO DESEJE COM ARQUIVO TXT
+            # # É necessario criar um nome e idade para a pessoa, depois passar como parametro para a função colocar no arquivo esses dados
+            # nome = str(input('Insira seu nome : ')).strip()
+            # while True:
+            #     try:
+            #         idade = int(input('Insira sua idade : '))
+            #     except:
+            #         print('Insira um valor inteiro!')
+            #     else:
+            #         break;
+            # # Chama a função para cadastrar uma pessoa no arquivo
+            # func_dados.Cadastra_Arquivo(arquivo, nome, idade)
             # Chama a função para cadastrar uma pessoas
             func_dados.cadastro(lista_cadastros)
         # Saida
