@@ -1,1 +1,0 @@
-APY_KEY = "sk-proj-9uvfJzOhtqugSoenYyuqT3BlbkFJD5N7hIWPZKyN9WF2sria"
